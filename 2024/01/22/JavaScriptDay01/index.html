@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="zh"><head>
+<title>JavaScript笔记Day01 - MyDrowsiness个人博客</title>
+<meta charset="UTF-8">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+<link rel="shortcut icon" href="/images/Sprite-pumpkin.png" type="image/png" />
+<meta name="description" content="一、软件1. 截图软件Snipaste    重点快捷键 注意：如果f1和f3不好用，请用    f1 截图 fn + f1   f3 定在屏幕上 fn + f3   取色：shift切换 fn+eac键是”锁定功能“   2. 画图软件Zoomlt    重点快捷键    ctrl + 1 放大   ctrl + 2 画图   画图的时候按住ctrl是矩形   画图的时候按住tab是椭圆   画">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript笔记Day01">
+<meta property="og:url" content="http://example.com/2024/01/22/JavaScriptDay01/index.html">
+<meta property="og:site_name" content="MyDrowsiness个人博客">
+<meta property="og:description" content="一、软件1. 截图软件Snipaste    重点快捷键 注意：如果f1和f3不好用，请用    f1 截图 fn + f1   f3 定在屏幕上 fn + f3   取色：shift切换 fn+eac键是”锁定功能“   2. 画图软件Zoomlt    重点快捷键    ctrl + 1 放大   ctrl + 2 画图   画图的时候按住ctrl是矩形   画图的时候按住tab是椭圆   画">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-01-22T13:04:38.312Z">
+<meta property="article:modified_time" content="2024-01-22T13:06:41.760Z">
+<meta property="article:author" content="MyDrowsiness">
+<meta name="twitter:card" content="summary">
+
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1705942316623">
+
+<link rel="stylesheet" href="/css/style.css?v=1705942316623">
+
+
+
+
+    
+        <link rel="stylesheet" href="/custom.css?v=1705942316623">
+    
+
+
+
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+<script src="/lib/lax.min.js" async></script>
+
+
+<script async src="/js/app.js?v=1705942316623"></script>
+
+ 
+
+
+
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+<meta name="generator" content="Hexo 7.0.0"></head><body class="nexmoe mdui-drawer-body-left"><div id="nexmoe-background"><div class="nexmoe-bg" style="background-image: url(https://github.com/MyDrowsiness/MyDrowsiness.github.io/raw/dd3d7d7fc85c7b9a78398ebe4f1f7793d4d3658d/DSC_2376.png)"></div><div class="mdui-appbar mdui-shadow-0"><div class="mdui-toolbar"><a class="mdui-btn mdui-btn-icon mdui-ripple" mdui-drawer="{target: &#039;#drawer&#039;, swipe: true}" title="menu"><i class="mdui-icon nexmoefont icon-menu"></i></a><div class="mdui-toolbar-spacer"></div><a class="mdui-btn mdui-btn-icon" href="/" title="MyDrowsiness"><img src="https://github.com/MyDrowsiness/MyDrowsiness.github.io/raw/dd3d7d7fc85c7b9a78398ebe4f1f7793d4d3658d/58bb7a1ad9ff54de4c7927e485c77f2.jpg" alt="MyDrowsiness"></a></div></div></div><div id="nexmoe-header"><div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="MyDrowsiness">
+            <img src="https://github.com/MyDrowsiness/MyDrowsiness.github.io/raw/dd3d7d7fc85c7b9a78398ebe4f1f7793d4d3658d/58bb7a1ad9ff54de4c7927e485c77f2.jpg" alt="MyDrowsiness" alt="MyDrowsiness">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>13</div>
+        <div><span>标签</span>0</div>
+        <div><span>分类</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" target="_blank" rel="noopener" href="https://starlike-daydream.github.io/Cesteo.github.io/" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" target="_blank" rel="noopener" href="https://mydrowsiness.github.io/2023/12/17/%E7%BB%84%E5%91%98%E7%9A%84%E5%91%A8%E6%8A%A5/" title="关于周报">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于周报
+            </div>
+        </a>
+        
+    </div>
+    
+    
+        
+        <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+         
+            <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+                <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+            </form>
+         
+    </div>
+</div>
+
+
+
+
+    
+        
+        <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="https://bilibili.com/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://github.com/MyDrowsiness/"
+			target="_blank"
+			mdui-tooltip="{content: 'GitHub'}"
+			style="
+				color: rgb(25, 23, 23);
+				background-color: rgba(25, 23, 23, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-github"
+			></i> </a
+		>
+	</div>
+</div>
+
+    
+        
+        
+
+    
+        
+        
+    
+        
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">10</span></li></ul>
+    </div>
+  </div>
+
+
+
+    
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">最新文章</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/01/22/24%E5%AF%92%E5%81%87%E5%91%A8%E6%8A%A501/">24寒假周报01</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/22/JavascrpiptDay02/">JavaScript笔记Day02</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/22/JavaScriptDay01/">JavaScript笔记Day01</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/24/23%E5%8D%81%E4%B8%83%E5%91%A8%E5%91%A8%E6%8A%A5/">23十七周周报</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/24/2023-12-24-WebDay04/">Web笔记Day04</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+   
+    <div class="nexmoe-copyright">
+        &copy; 2024 MyDrowsiness
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer --></div><div id="nexmoe-content"><div class="nexmoe-primary"><div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover absolute" style="padding-top: 62.5%;"> 
+            <img src="/images/DSC_2376.png" alt="JavaScript笔记Day01" loading="lazy">
+            <h1>JavaScript笔记Day01</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2024年01月22日</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h3 id="一、软件"><a href="#一、软件" class="headerlink" title="一、软件"></a>一、软件</h3><h4 id="1-截图软件"><a href="#1-截图软件" class="headerlink" title="1. 截图软件"></a>1. 截图软件</h4><p>Snipaste</p>
+<table>
+<thead>
+<tr>
+<th>重点快捷键</th>
+<th>注意：如果f1和f3不好用，请用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>f1 截图</td>
+<td>fn + f1</td>
+</tr>
+<tr>
+<td>f3 定在屏幕上</td>
+<td>fn + f3</td>
+</tr>
+<tr>
+<td>取色：shift切换</td>
+<td>fn+eac键是”锁定功能“</td>
+</tr>
+</tbody></table>
+<h4 id="2-画图软件"><a href="#2-画图软件" class="headerlink" title="2. 画图软件"></a>2. 画图软件</h4><p>Zoomlt</p>
+<table>
+<thead>
+<tr>
+<th>重点快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ctrl + 1 放大</td>
+</tr>
+<tr>
+<td>ctrl + 2 画图</td>
+</tr>
+<tr>
+<td>画图的时候按住ctrl是矩形</td>
+</tr>
+<tr>
+<td>画图的时候按住tab是椭圆</td>
+</tr>
+<tr>
+<td>画图的时候按字母可以改变颜色：r红色 b蓝色 g绿色 p粉色 o橙色</td>
+</tr>
+</tbody></table>
+<h4 id="3-思维导图"><a href="#3-思维导图" class="headerlink" title="3. 思维导图"></a>3. 思维导图</h4><p>XMind</p>
+<table>
+<thead>
+<tr>
+<th>重点快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>enter 同级</td>
+</tr>
+<tr>
+<td>tab 下级</td>
+</tr>
+</tbody></table>
+<h3 id="二、JavaScript介绍"><a href="#二、JavaScript介绍" class="headerlink" title="二、JavaScript介绍"></a>二、JavaScript介绍</h3><h5 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h5><ul>
+<li><pre><code class="mermaid">graph TD
+A(JavaScript)==&gt;B(ECMAScript)
+A==&gt;C(Web APIs)
+C==&gt;D(DOM)
+C==&gt;E(Bom)
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">1. JavaScript</span><br><span class="line">   是一种运行在客户端（浏览器）的编程语言，实现人机交互效果。</span><br><span class="line">2. 作用</span><br><span class="line">   网页特效（监听用户的一些行为让网页做出对应的反馈）</span><br><span class="line">   表单校验（针对表单数据的合法性进行判断）</span><br><span class="line">   数据交互（获取后台的数据，渲染到前端）</span><br><span class="line">   服务端编程（node.js）</span><br><span class="line">3. JavaScript的组成</span><br><span class="line">   - ECMAScript:</span><br><span class="line">     规定了js基础语法核心知识。</span><br><span class="line">     比如：变量、分支语句、循环语句、对象等等。</span><br><span class="line">   - Web APIs：</span><br><span class="line">     DOM 操作文档，比如对页面元素进行移动、大小、添加删除等操作</span><br><span class="line">     BOM 操作浏览器，比如页面弹窗，检测窗口宽度、存储数据到浏览器等</span><br><span class="line"></span><br><span class="line">JS权威网站：[mdn](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript)</span><br><span class="line"></span><br><span class="line">4. 体验(按钮点击变色)</span><br><span class="line"></span><br><span class="line">   ```html</span><br><span class="line">   &lt;body&gt;</span><br><span class="line">     &lt;button class=&quot;pink&quot;&gt;按钮1&lt;/button&gt;</span><br><span class="line">     &lt;button&gt;按钮2&lt;/button&gt;</span><br><span class="line">     &lt;button&gt;按钮3&lt;/button&gt;</span><br><span class="line">     &lt;button&gt;按钮4&lt;/button&gt;</span><br><span class="line">     &lt;script&gt;</span><br><span class="line">       let bts = document.querySelectorAll(&#x27;button&#x27;)</span><br><span class="line">       for (let i=0;i&lt;bts.length;i++)&#123;</span><br><span class="line">         bts[i].addEventListener(&#x27;click&#x27;,function()&#123;</span><br><span class="line">           document.querySelector(&#x27;.pink&#x27;).className=&#x27;&#x27;</span><br><span class="line">           this.className=&#x27;pink&#x27;</span><br><span class="line">         &#125;)</span><br><span class="line">       &#125;</span><br><span class="line">     &lt;/script&gt;</span><br><span class="line">   &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+<h5 id="JavaScript书写位置"><a href="#JavaScript书写位置" class="headerlink" title="JavaScript书写位置"></a>JavaScript书写位置</h5><ol>
+<li><p>内部JavaScript<br>直接在html文件里，用script标签包住<br>规范：script标签写在</body>上面（放在最底端）<br>拓展：alert(‘你好，js’)页面弹出警告对话框</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 内部js --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//页面弹出警告框</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">alert</span>(<span class="string">&#x27;你好，js&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>外部JavaScript<br>代码写在以.js结尾的文件里<br>语法：通过script标签，引入到html页面中。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./js/03-书写位置-外部.js&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 中间不要写内容（写了也不执行）</span></span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">alert</span>(<span class="string">&#x27;我是外部的JS文件&#x27;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>内联JavaScript<br>代码标签写在标签内部<br>语法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">onlick</span>=<span class="string">&quot;alert(&#x27;逗你玩&#x27;)&quot;</span>&gt;</span>点击我月薪过万<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="JavaScript注释"><a href="#JavaScript注释" class="headerlink" title="JavaScript注释"></a>JavaScript注释</h5><ol>
+<li>单行注释<br>符号：&#x2F;&#x2F;<br>   作用：&#x2F;&#x2F;右边这一行的代码会被忽略<br>   快捷键：ctrl + &#x2F;</li>
+<li>块注释<br>符号：&#x2F;*  *&#x2F;<br>   作用：在&#x2F;* 和 *&#x2F; 之间的所有内容都会被忽略<br>   快捷键：shift + alt + A</li>
+</ol>
+<h5 id="JavaScript-结束符"><a href="#JavaScript-结束符" class="headerlink" title="JavaScript 结束符"></a>JavaScript 结束符</h5><p>​	作用： 使用英文的 “  ;  ” 代表语句结束。<br>​	实际情况： 实际开发中，可写可不写, 浏览器(JavaScript 引擎) 可以自动推断语句的结束位置。<br>​	现状： 在实际开发中，越来越多的人主张，书写 JavaScript 代码时省略结束符。<br>​	约定：为了风格统一，结束符要么每句都写，要么每句都不写（按照团队要求）。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	<span class="title function_">alert</span>(<span class="string">&quot;书写1&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">alert</span>(<span class="string">&quot;书写2&quot;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="JavaScript-输入输出语"><a href="#JavaScript-输入输出语" class="headerlink" title="JavaScript 输入输出语"></a>JavaScript 输入输出语</h5><ol>
+<li><p>概念:<br>输出和输入也可理解为人和计算机的交互，用户通过键盘、鼠标等向计算机输入信息，计算机处理后再展示结果给用户，这便是一次输入和输出的过程。</p>
+</li>
+<li><p>输出语法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.write(&#x27;要输出的内容&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>作用：向body语句输出内容</p>
+<p>注意：如果输出内容写的是标签，也会被解析成网页元素</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(&#x27;要输出的内容&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>作用：页面弹出警告对话框</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&#x27;控制台打印&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>作用：控制台输出语法，程序员调式使用</p>
+</li>
+<li><p>输入语法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prompt(&#x27;请输入您的姓名：&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>作用：显示一个对话框，对话框中包含一条文字信息，用来提示用户输入文字</p>
+</li>
+<li><p>JavaScript 代码执行顺序：<br>按HTML文档流顺序执行JavaScript代码<br>alert() 和 prompt() 它们会跳过页面渲染先被执行</p>
+</li>
+</ol>
+<h5 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h5><p>在计算机科学中，字面量（literal）是在计算机中描述 事&#x2F;物。</p>
+<h3 id="三、变量"><a href="#三、变量" class="headerlink" title="三、变量"></a>三、变量</h3><ol>
+<li><p>概念<br>变量是计算机存储数据的“容器”，它可以让计算机变得有“记忆”。<br>注意：变量不是数据本身，它们仅仅是一个用于存储数值的容器。可以理解为是一个个用来装东西的纸箱子。</p>
+</li>
+<li><p>使用<br>声明变量：<br>要想使用变量，首先需要创建变量（也称为声明变量或者定义变量）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> 变量名</span><br></pre></td></tr></table></figure>
+
+<p>声明变量有两部分构成：声明关键字、变量名（标识）<br>let 即关键字 (let: 允许、许可、让、要)，所谓关键字是系统提供的专门用来声明（定义）变量的词语</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> age <span class="comment">//age 即变量的名称，也叫标识符</span></span><br></pre></td></tr></table></figure>
+
+<p>变量赋值：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.声明一个age变量</span></span><br><span class="line"><span class="keyword">let</span> age</span><br><span class="line"><span class="comment">//2.age变量赋值18</span></span><br><span class="line">age = <span class="number">18</span></span><br><span class="line"><span class="comment">//3.输出age变量</span></span><br><span class="line"><span class="title function_">alert</span>(age)</span><br></pre></td></tr></table></figure>
+
+<p>注意：是通过变量名来获得变量里面的数据<br>该操作也被称为变量初始化</p>
+<p>更新变量：<br>变量赋值后，还可以通过简单地给它一个不同的值来更新它。</p>
+<p>声明多个变量：<br>变量赋值后，还可以通过简单地给它一个不同的值来更新它。<br>语法：多个变量中间用逗号隔开</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> age = <span class="number">18</span>, nuname = <span class="string">&#x27;pink&#x27;</span><span class="comment">//不推荐，可读性差</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//推荐写法</span></span><br><span class="line"><span class="keyword">let</span> age = <span class="number">18</span></span><br><span class="line"><span class="keyword">let</span> nuame = <span class="string">&#x27;pink&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>变量本质<br>内存：计算机中存储数据的地方，相当于一个空间。<br>变量本质：是程序在内存中申请的一块用来存放数据的小空间。</p>
+</li>
+<li><p>变量命名规则规范<br>规则：<br>不能用关键字<br>关键字：有特殊含义的字符，JavaScript 内置的一些英语词汇。例如：let、var、if、for等<br>只能用下划线、字母、数字、$组成，且数字不能开头<br>字母严格区分大小写，如 Age 和 age 是不同的变量<br>规范：<br>起名要有意义<br>遵守小驼峰命名法<br>第一个单词首字母小写，后面每个单词首字母大写。例：userName</p>
+</li>
+<li><p>数组<br>参考java</p>
+</li>
+</ol>
+<h3 id="四、常量"><a href="#四、常量" class="headerlink" title="四、常量"></a>四、常量</h3><p>概念：<br>    使用 const 声明的变量称为“常量”。<br>使用场景：<br>    当某个变量永远不会改变的时候，就可以使用 const 来声明，而不是let。<br>命名规范：<br>    和变量一致<br>常量使用：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//声明常量</span></span><br><span class="line">canst G = <span class="number">9.8</span></span><br><span class="line"><span class="comment">//修改</span></span><br><span class="line">G = <span class="number">9.9</span></span><br><span class="line"><span class="comment">//输出这个常量</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(G)</span><br></pre></td></tr></table></figure>
+
+<h3 id="五、数据类型"><a href="#五、数据类型" class="headerlink" title="五、数据类型"></a>五、数据类型</h3><p>JS 数据类型整体分为两大类：</p>
+<p>1.基本数据类型<br>    number 数字型<br>    string字符串型<br>    boolean 布尔型<br>    undefind 未定义型<br>    null 空类型</p>
+<p>2.引用数据类型<br>    object 对象</p>
+<p>其余参考Java……</p>
+<p>检测数据类型：<br>通过 typeof 关键字检测数据类型<br>typeof 运算符可以返回被检测的数据类型。它支持两种语法形式：</p>
+<ol>
+<li>作为运算符： typeof x （常用的写法）</li>
+<li>函数形式： typeof(x)<br> 换言之，有括号和没有括号，得到的结果是一样的，所以我们直接使用运算符的写法</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> age)</span><br></pre></td></tr></table></figure>
+
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+</div>
+  
+  
+    <script async src="/js/copy-codeblock.js?v=1705942316598"></script>
+  
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div></div><div class="nexmoe-post-right">    <div class="nexmoe-fixed">
+        <div class="nexmoe-tool">
+
+            
+
+            
+            
+            <button class="mdui-fab catalog" style="overflow:unset;">
+                <i class="nexmoefont icon-i-catalog"></i>
+                <div class="nexmoe-toc">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">一、软件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%88%AA%E5%9B%BE%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.1.</span> <span class="toc-text">1. 截图软件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%94%BB%E5%9B%BE%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.2.</span> <span class="toc-text">2. 画图软件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE"><span class="toc-number">1.3.</span> <span class="toc-text">3. 思维导图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81JavaScript%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.</span> <span class="toc-text">二、JavaScript介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">2.0.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#JavaScript%E4%B9%A6%E5%86%99%E4%BD%8D%E7%BD%AE"><span class="toc-number">2.0.2.</span> <span class="toc-text">JavaScript书写位置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#JavaScript%E6%B3%A8%E9%87%8A"><span class="toc-number">2.0.3.</span> <span class="toc-text">JavaScript注释</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#JavaScript-%E7%BB%93%E6%9D%9F%E7%AC%A6"><span class="toc-number">2.0.4.</span> <span class="toc-text">JavaScript 结束符</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#JavaScript-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AF%AD"><span class="toc-number">2.0.5.</span> <span class="toc-text">JavaScript 输入输出语</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AD%97%E9%9D%A2%E9%87%8F"><span class="toc-number">2.0.6.</span> <span class="toc-text">字面量</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%8F%98%E9%87%8F"><span class="toc-number">3.</span> <span class="toc-text">三、变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%B8%B8%E9%87%8F"><span class="toc-number">4.</span> <span class="toc-text">四、常量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.</span> <span class="toc-text">五、数据类型</span></a></li></ol>
+                </div>
+            </button>
+            
+
+            
+
+            <a href="#nexmoe-content" class="backtop toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+        </div>
+    </div>
+</div></div><div id="nexmoe-footer"><!--!--></div><div id="nexmoe-search-space"><div class="search-container"><div class="search-header"><div class="search-input-container"><input class="search-input" type="text" placeholder="搜索" onInput="sinput();"></div><a class="search-close" onclick="sclose();">×</a></div><div class="search-body"></div></div></div><div></div></body></html>

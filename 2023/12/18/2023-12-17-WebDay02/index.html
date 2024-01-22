@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="zh"><head>
+<title>Web笔记Day02 - MyDrowsiness个人博客</title>
+<meta charset="UTF-8">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+<link rel="shortcut icon" href="/images/Sprite-pumpkin.png" type="image/png" />
+<meta name="description" content="一、空间转换1. 空间转换-平移定义空间，是从坐标轴角度定义的X、Y和Z三条坐标轴构成了一个立体空间；Z轴位置与视线方向相同，正方向指向我。 属性1234transform: translate3d(x,y,z);transform: translateX();transform: translateY();transform: translateZ();  取值正负均可像素单位数值百分比(参照盒">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web笔记Day02">
+<meta property="og:url" content="http://example.com/2023/12/18/2023-12-17-WebDay02/index.html">
+<meta property="og:site_name" content="MyDrowsiness个人博客">
+<meta property="og:description" content="一、空间转换1. 空间转换-平移定义空间，是从坐标轴角度定义的X、Y和Z三条坐标轴构成了一个立体空间；Z轴位置与视线方向相同，正方向指向我。 属性1234transform: translate3d(x,y,z);transform: translateX();transform: translateY();transform: translateZ();  取值正负均可像素单位数值百分比(参照盒">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-18T11:52:07.458Z">
+<meta property="article:modified_time" content="2023-12-24T14:21:45.653Z">
+<meta property="article:author" content="MyDrowsiness">
+<meta name="twitter:card" content="summary">
+
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1705942316656">
+
+<link rel="stylesheet" href="/css/style.css?v=1705942316656">
+
+
+
+
+    
+        <link rel="stylesheet" href="/custom.css?v=1705942316656">
+    
+
+
+
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+<script src="/lib/lax.min.js" async></script>
+
+
+<script async src="/js/app.js?v=1705942316656"></script>
+
+ 
+
+
+
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+<meta name="generator" content="Hexo 7.0.0"></head><body class="nexmoe mdui-drawer-body-left"><div id="nexmoe-background"><div class="nexmoe-bg" style="background-image: url(https://github.com/MyDrowsiness/MyDrowsiness.github.io/raw/dd3d7d7fc85c7b9a78398ebe4f1f7793d4d3658d/DSC_2376.png)"></div><div class="mdui-appbar mdui-shadow-0"><div class="mdui-toolbar"><a class="mdui-btn mdui-btn-icon mdui-ripple" mdui-drawer="{target: &#039;#drawer&#039;, swipe: true}" title="menu"><i class="mdui-icon nexmoefont icon-menu"></i></a><div class="mdui-toolbar-spacer"></div><a class="mdui-btn mdui-btn-icon" href="/" title="MyDrowsiness"><img src="https://github.com/MyDrowsiness/MyDrowsiness.github.io/raw/dd3d7d7fc85c7b9a78398ebe4f1f7793d4d3658d/58bb7a1ad9ff54de4c7927e485c77f2.jpg" alt="MyDrowsiness"></a></div></div></div><div id="nexmoe-header"><div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="MyDrowsiness">
+            <img src="https://github.com/MyDrowsiness/MyDrowsiness.github.io/raw/dd3d7d7fc85c7b9a78398ebe4f1f7793d4d3658d/58bb7a1ad9ff54de4c7927e485c77f2.jpg" alt="MyDrowsiness" alt="MyDrowsiness">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>13</div>
+        <div><span>标签</span>0</div>
+        <div><span>分类</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" target="_blank" rel="noopener" href="https://starlike-daydream.github.io/Cesteo.github.io/" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" target="_blank" rel="noopener" href="https://mydrowsiness.github.io/2023/12/17/%E7%BB%84%E5%91%98%E7%9A%84%E5%91%A8%E6%8A%A5/" title="关于周报">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于周报
+            </div>
+        </a>
+        
+    </div>
+    
+    
+        
+        <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+         
+            <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+                <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+            </form>
+         
+    </div>
+</div>
+
+
+
+
+    
+        
+        <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="https://bilibili.com/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://github.com/MyDrowsiness/"
+			target="_blank"
+			mdui-tooltip="{content: 'GitHub'}"
+			style="
+				color: rgb(25, 23, 23);
+				background-color: rgba(25, 23, 23, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-github"
+			></i> </a
+		>
+	</div>
+</div>
+
+    
+        
+        
+
+    
+        
+        
+    
+        
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">10</span></li></ul>
+    </div>
+  </div>
+
+
+
+    
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">最新文章</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/01/22/24%E5%AF%92%E5%81%87%E5%91%A8%E6%8A%A501/">24寒假周报01</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/22/JavascrpiptDay02/">JavaScript笔记Day02</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/22/JavaScriptDay01/">JavaScript笔记Day01</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/24/23%E5%8D%81%E4%B8%83%E5%91%A8%E5%91%A8%E6%8A%A5/">23十七周周报</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/24/2023-12-24-WebDay04/">Web笔记Day04</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+   
+    <div class="nexmoe-copyright">
+        &copy; 2024 MyDrowsiness
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer --></div><div id="nexmoe-content"><div class="nexmoe-primary"><div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover absolute" style="padding-top: 62.5%;"> 
+            <img src="/images/DSC_2376.png" alt="Web笔记Day02" loading="lazy">
+            <h1>Web笔记Day02</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2023年12月18日</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h1 id="一、空间转换"><a href="#一、空间转换" class="headerlink" title="一、空间转换"></a>一、空间转换</h1><h2 id="1-空间转换-平移"><a href="#1-空间转换-平移" class="headerlink" title="1. 空间转换-平移"></a>1. 空间转换-平移</h2><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>空间，是从坐标轴角度定义的X、Y和Z三条坐标轴构成了一个立体空间；<br>Z轴位置与视线方向相同，正方向指向我。</p>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">transform: translate3d(x,y,z);</span><br><span class="line">transform: translateX();</span><br><span class="line">transform: translateY();</span><br><span class="line">transform: translateZ();</span><br></pre></td></tr></table></figure>
+
+<h4 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h4><p>正负均可<br>像素单位数值<br>百分比(参照盒子自身尺寸计算结果)</p>
+<p>$\color{red}{PS: 3d小括号里面必须逗号分隔开三个数，否则无效果。}$</p>
+<h2 id="2-视距-perspective"><a href="#2-视距-perspective" class="headerlink" title="2. 视距 perspective"></a>2. 视距 perspective</h2><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><p>指定了观察者与Z&#x3D;0平面的距离，为元素添加透视效果。</p>
+<h4 id="透视效果"><a href="#透视效果" class="headerlink" title="透视效果"></a>透视效果</h4><p>近大远小、近实远虚。</p>
+<h4 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h4><p>添加给父级，取值范围800-1200。<br>perspective：视距；<br>PS:视距属性必须添加给直接父级，否则无效。视距设置过大，效果不明显，视距设置过小，直接乎到脸上。</p>
+<h2 id="3-空间转换-旋转"><a href="#3-空间转换-旋转" class="headerlink" title="3. 空间转换-旋转"></a>3. 空间转换-旋转</h2><h4 id="书写"><a href="#书写" class="headerlink" title="书写"></a>书写</h4><p>transform: rotateZ(角度deg); &#x2F;&#x2F;沿着Z轴旋转，效果跟平面旋转效果一样。<br>transform: rotateX(角度deg); &#x2F;&#x2F;正值向后倒，负值往我扑。<br>transform: rotateY(角度deg);<br>PS:如果不给父级设置perspective，则图仅压缩，无近大远小看不出旋转。</p>
+<h4 id="左手法则"><a href="#左手法则" class="headerlink" title="左手法则"></a>左手法则</h4><p>根据旋转方向确定取正负<br>左手握住旋转轴，拇指指向正值方向，其他四个手指弯曲方向为旋转正值方向。</p>
+<h4 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h4><p>rotate3d(x,y,z,角度度数)：用来设置自定义旋转轴的位置及旋转的角度。<br>x,y,z取值为0-1之间的数字。</p>
+<h2 id="4-立体呈现"><a href="#4-立体呈现" class="headerlink" title="4. 立体呈现"></a>4. 立体呈现</h2><h4 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h4><p>设置元素的子元素是位于3D空间中还是平面中</p>
+<h4 id="属性名"><a href="#属性名" class="headerlink" title="属性名"></a>属性名</h4><p>transform-style</p>
+<h4 id="属性值"><a href="#属性值" class="headerlink" title="属性值"></a>属性值</h4><p>flat:子级处于平面中。<br>preserve-3d：子级处于3D空间。</p>
+<h4 id="呈现步骤"><a href="#呈现步骤" class="headerlink" title="呈现步骤"></a>呈现步骤</h4><p>1.父元素添加transform-style: preserve-3d;<br>2.子级定位<br>3.调整子盒子的位置（位移或旋转）</p>
+<h2 id="5-空间转换-缩放"><a href="#5-空间转换-缩放" class="headerlink" title="5. 空间转换-缩放"></a>5. 空间转换-缩放</h2><h4 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h4><p>transform:scale3d(x,y,z);<br>transform:scaleX();<br>transform:scaleY();<br>transform:scaleZ();</p>
+<h1 id="二、动画"><a href="#二、动画" class="headerlink" title="二、动画"></a>二、动画</h1><p>$\color{maroon}{animation:加强版的过渡。}​$</p>
+<h2 id="1-过渡与动画"><a href="#1-过渡与动画" class="headerlink" title="1. 过渡与动画"></a>1. 过渡与动画</h2><p>过渡：实现两个状态间的变化过程<br>动画：实现多个状态见的变化过程，动画过程可控（虫回复播放、最终画面，是否暂停）</p>
+<h2 id="2-动画实现步骤"><a href="#2-动画实现步骤" class="headerlink" title="2. 动画实现步骤"></a>2. 动画实现步骤</h2><h4 id="定义动画"><a href="#定义动画" class="headerlink" title="定义动画"></a>定义动画</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--两个状态--&gt;</span></span><br><span class="line">@keyframes 动画名称 1&#123;</span><br><span class="line">    from &#123;&#125;</span><br><span class="line">    to &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">&lt;!--多个状态--&gt;</span></span><br><span class="line">@keyframes 动画名称2 &#123;</span><br><span class="line">    0% &#123;&#125;</span><br><span class="line">    10% &#123;&#125;</span><br><span class="line">    ……</span><br><span class="line">    100% &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用动画"><a href="#使用动画" class="headerlink" title="使用动画"></a>使用动画</h4><p>animation: 动画名称 动画时长s；</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.box</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">background-color</span>: pink;</span></span><br><span class="line"><span class="language-css">        <span class="comment">/*使用动画*/</span></span></span><br><span class="line"><span class="language-css">        <span class="attribute">animation</span>: change <span class="number">1s</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="comment">/*动画一：宽度从200变化到800*/</span></span></span><br><span class="line"><span class="language-css">    <span class="keyword">@keyframes</span> change&#123;</span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">from</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">to</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">800px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="comment">/*</span></span></span><br><span class="line"><span class="comment"><span class="language-css">    动画二：从200*100变化到300*300再变化到800*500</span></span></span><br><span class="line"><span class="comment"><span class="language-css">    (n%：动画时长百分比)</span></span></span><br><span class="line"><span class="comment"><span class="language-css">    */</span></span></span><br><span class="line"><span class="language-css">    <span class="keyword">@keyframes</span> change&#123;</span></span><br><span class="line"><span class="language-css">        <span class="number">0%</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">            heoght: <span class="number">100px</span></span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="number">20%</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">height</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="number">100%</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">800px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">height</span>: <span class="number">500px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    &#125; </span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="animation属性"><a href="#animation属性" class="headerlink" title="animation属性"></a>animation属性</h4><p><strong>普通写法：</strong><br>animation: 动画名称 动画时长s 速度曲线 延迟时间 重复次数 动画方向 执行完毕时状态；<br>$\color</p>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+</div>
+  
+  
+    <script async src="/js/copy-codeblock.js?v=1705942316599"></script>
+  
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div></div><div class="nexmoe-post-right">    <div class="nexmoe-fixed">
+        <div class="nexmoe-tool">
+
+            
+
+            
+            
+            <button class="mdui-fab catalog" style="overflow:unset;">
+                <i class="nexmoefont icon-i-catalog"></i>
+                <div class="nexmoe-toc">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E7%A9%BA%E9%97%B4%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.</span> <span class="toc-text">一、空间转换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%A9%BA%E9%97%B4%E8%BD%AC%E6%8D%A2-%E5%B9%B3%E7%A7%BB"><span class="toc-number">1.1.</span> <span class="toc-text">1. 空间转换-平移</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%96%E5%80%BC"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">取值</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%A7%86%E8%B7%9D-perspective"><span class="toc-number">1.2.</span> <span class="toc-text">2. 视距 perspective</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%8F%E8%A7%86%E6%95%88%E6%9E%9C"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">透视效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7-1"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">属性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%A9%BA%E9%97%B4%E8%BD%AC%E6%8D%A2-%E6%97%8B%E8%BD%AC"><span class="toc-number">1.3.</span> <span class="toc-text">3. 空间转换-旋转</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B9%A6%E5%86%99"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">书写</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A6%E6%89%8B%E6%B3%95%E5%88%99"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">左手法则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%93%E5%B1%95"><span class="toc-number">1.3.0.3.</span> <span class="toc-text">拓展</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%AB%8B%E4%BD%93%E5%91%88%E7%8E%B0"><span class="toc-number">1.4.</span> <span class="toc-text">4. 立体呈现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8-1"><span class="toc-number">1.4.0.1.</span> <span class="toc-text">作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%90%8D"><span class="toc-number">1.4.0.2.</span> <span class="toc-text">属性名</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%80%BC"><span class="toc-number">1.4.0.3.</span> <span class="toc-text">属性值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%88%E7%8E%B0%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.4.0.4.</span> <span class="toc-text">呈现步骤</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%A9%BA%E9%97%B4%E8%BD%AC%E6%8D%A2-%E7%BC%A9%E6%94%BE"><span class="toc-number">1.5.</span> <span class="toc-text">5. 空间转换-缩放</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7-2"><span class="toc-number">1.5.0.1.</span> <span class="toc-text">属性</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%8A%A8%E7%94%BB"><span class="toc-number">2.</span> <span class="toc-text">二、动画</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%BF%87%E6%B8%A1%E4%B8%8E%E5%8A%A8%E7%94%BB"><span class="toc-number">2.1.</span> <span class="toc-text">1. 过渡与动画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%8A%A8%E7%94%BB%E5%AE%9E%E7%8E%B0%E6%AD%A5%E9%AA%A4"><span class="toc-number">2.2.</span> <span class="toc-text">2. 动画实现步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E5%8A%A8%E7%94%BB"><span class="toc-number">2.2.0.1.</span> <span class="toc-text">定义动画</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%8A%A8%E7%94%BB"><span class="toc-number">2.2.0.2.</span> <span class="toc-text">使用动画</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">2.2.0.3.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#animation%E5%B1%9E%E6%80%A7"><span class="toc-number">2.2.0.4.</span> <span class="toc-text">animation属性</span></a></li></ol></li></ol></li></ol></li></ol>
+                </div>
+            </button>
+            
+
+            
+
+            <a href="#nexmoe-content" class="backtop toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+        </div>
+    </div>
+</div></div><div id="nexmoe-footer"><!--!--></div><div id="nexmoe-search-space"><div class="search-container"><div class="search-header"><div class="search-input-container"><input class="search-input" type="text" placeholder="搜索" onInput="sinput();"></div><a class="search-close" onclick="sclose();">×</a></div><div class="search-body"></div></div></div><div></div></body></html>

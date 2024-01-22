@@ -1,0 +1,972 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Web笔记Day01</title>
+    <url>/2023/12/13/2023-12-09-WebDay01/</url>
+    <content><![CDATA[<h1 id="一、平面转换transform"><a href="#一、平面转换transform" class="headerlink" title="一、平面转换transform"></a>一、平面转换transform</h1><h2 id="1-概念"><a href="#1-概念" class="headerlink" title="1.概念"></a>1.概念</h2><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><p>为元素添加动态效果，一般与过度配合使用。</p>
+<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>改变盒子在平面内的形态（位移、旋转、缩放、倾斜）。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">div</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">margin</span>: <span class="number">100px</span> <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">background-color</span>: pink;;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">transition</span>: all <span class="number">1s</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 鼠标滑过：添加动态效果 */</span></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">div</span><span class="selector-pseudo">:hover</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">transform</span>: <span class="built_in">translate</span>(<span class="number">800px</span>) <span class="built_in">rotate</span>(<span class="number">360deg</span>) <span class="built_in">scale</span>(<span class="number">2</span>) <span class="built_in">skew</span>(<span class="number">30deg</span>);</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>transform平面转换，一般搭配transition使用：<br>平移：translate(800px)<br>旋转：rotate(360deg)<br>缩放：scale(2)<br>倾斜：skew(30deg)</p>
+<h4 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h4><p>平面转换又叫 2D转换。</p>
+<h2 id="2-平面转换-平移"><a href="#2-平面转换-平移" class="headerlink" title="2.平面转换-平移"></a>2.平面转换-平移</h2><h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>transform:translate(X轴移动距离，Y轴移动距离)；</p>
+<h4 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h4><p>像素单位数值。<br>百分比(参照盒子自身尺寸计算结果)。<br>正负均可。</p>
+<h4 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h4><p>translate()只写一个值，表示沿着X轴移动。<br>单独设置X或Y轴移动距离：translateX()或translateY()。</p>
+<h4 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.father</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>: <span class="number">500px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">margin</span>: <span class="number">100px</span> auto;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.son</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">background-color</span>: pink;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">transition</span>: all <span class="number">0.5s</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 鼠标移入到父盒子，son改变位置 */</span></span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.father</span><span class="selector-pseudo">:hover</span> <span class="selector-class">.son</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="comment">/*像素*/</span></span></span><br><span class="line"><span class="language-css">        <span class="attribute">transform</span>: <span class="built_in">translate</span>(<span class="number">300px</span>,<span class="number">200px</span>);</span></span><br><span class="line"><span class="language-css">        <span class="comment">/*百分比：参照盒子自身尺寸计算结果*/</span></span></span><br><span class="line"><span class="language-css">        <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>,<span class="number">100%</span>);</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;father&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;son&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="拓展-1"><a href="#拓展-1" class="headerlink" title="拓展"></a>拓展</h4><p>绝对定位元素居中（例如：登录框）</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.box</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">left</span>: <span class="number">50%</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">top</span>: <span class="number">50%</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">transform</span>: <span class="built_in">translate</span>(-<span class="number">50%</span>,-<span class="number">50%</span>);</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">background-color</span>: pink;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-平面转换-旋转"><a href="#3-平面转换-旋转" class="headerlink" title="3.平面转换-旋转"></a>3.平面转换-旋转</h2><h4 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h4><p>transform:rotate(旋转角度deg)<br>角度单位是deg</p>
+<h4 id="技巧-1"><a href="#技巧-1" class="headerlink" title="技巧"></a>技巧</h4><p>取正负均可<br>取值为正，顺时针旋转<br>取值为负，逆时针旋转</p>
+<h4 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">img</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">margin</span>: <span class="number">200px</span> <span class="number">600px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">transition</span>: all <span class="number">2s</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 鼠标悬停到图片上面，添加旋转效果 */</span></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">img</span><span class="selector-pseudo">:hover</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="comment">/* 正数：顺时针旋转；负数：逆时针旋转 */</span></span></span><br><span class="line"><span class="language-css">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">720deg</span>);</span></span><br><span class="line"><span class="language-css">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(-<span class="number">720deg</span>);</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-平面转换-改变转换原点"><a href="#4-平面转换-改变转换原点" class="headerlink" title="4.平面转换-改变转换原点"></a>4.平面转换-改变转换原点</h2><p>默认情况下，转换原点是盒子中心点</p>
+<h4 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h4><p>transform-origin:水平原点位置 垂直原点位置</p>
+<h4 id="取值-1"><a href="#取值-1" class="headerlink" title="取值"></a>取值</h4><p>✿方位名词(left、top、right、botten、center)<br>像素单位数值<br>百分比</p>
+<h2 id="5-平面转换-多重转换"><a href="#5-平面转换-多重转换" class="headerlink" title="5.平面转换-多重转换"></a>5.平面转换-多重转换</h2><h4 id="技巧-2"><a href="#技巧-2" class="headerlink" title="技巧"></a>技巧</h4><p>transform: translate() rotate();</p>
+<h4 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.box</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">margin</span>: <span class="number">200px</span> <span class="number">350px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>: <span class="number">800px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#000</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">img</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">transition</span>: all <span class="number">5s</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 鼠标移入box,图片边走边转 */</span></span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.box</span><span class="selector-pseudo">:hover</span> <span class="selector-tag">img</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="comment">/* 先平移再旋转（目标效果） */</span></span></span><br><span class="line"><span class="language-css">        <span class="attribute">transform</span>: <span class="built_in">translate</span>(<span class="number">600px</span>) <span class="built_in">rotate</span>(<span class="number">360deg</span>);</span></span><br><span class="line"><span class="language-css">        <span class="comment">/* </span></span></span><br><span class="line"><span class="comment"><span class="language-css">        先旋转再平移</span></span></span><br><span class="line"><span class="comment"><span class="language-css">        旋转会改变坐标轴向，导致效果不一样  </span></span></span><br><span class="line"><span class="comment"><span class="language-css">        多重转换：一第一种转换形态的坐标轴为准 </span></span></span><br><span class="line"><span class="comment"><span class="language-css">        */</span></span></span><br><span class="line"><span class="language-css">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>) <span class="built_in">translate</span>(<span class="number">600px</span>);</span></span><br><span class="line"><span class="language-css">        <span class="comment">/* 层叠性，会被后面属性覆盖 */</span></span></span><br><span class="line"><span class="language-css">        <span class="attribute">transform</span>: <span class="built_in">translate</span>(<span class="number">600px</span>);</span></span><br><span class="line"><span class="language-css">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">360deg</span>);</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="6-平面转换-缩放"><a href="#6-平面转换-缩放" class="headerlink" title="6.平面转换-缩放"></a>6.平面转换-缩放</h2><h4 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h4><p>改变元素的width或height属性能实现吗？<br>注：该方法从左上角开始放大。</p>
+<h4 id="属性-3"><a href="#属性-3" class="headerlink" title="属性"></a>属性</h4><p>transform: scale(缩放倍数)；<br>transform: scale(X轴缩放倍数，Y轴缩放倍数);</p>
+<h4 id="技巧-3"><a href="#技巧-3" class="headerlink" title="技巧"></a>技巧</h4><p>通常，只为scale()设置一个值，表示X轴和Y轴等比例缩放<br>取值大于1表示放大，取值小于1表示缩小</p>
+<h2 id="7-平面转换-倾斜"><a href="#7-平面转换-倾斜" class="headerlink" title="7.平面转换-倾斜"></a>7.平面转换-倾斜</h2><h4 id="属性-4"><a href="#属性-4" class="headerlink" title="属性"></a>属性</h4><p>transform: skew();</p>
+<h4 id="取值-2"><a href="#取值-2" class="headerlink" title="取值"></a>取值</h4><p>角度度数deg</p>
+<h1 id="二、渐变"><a href="#二、渐变" class="headerlink" title="二、渐变"></a>二、渐变</h1><h2 id="1-概念-1"><a href="#1-概念-1" class="headerlink" title="1.概念"></a>1.概念</h2><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>渐变是多个颜色逐渐变化的效果，一般用于设置盒子背景</p>
+<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><p>1.线性渐变<br>2.径向渐变</p>
+<h2 id="2-线性渐变"><a href="#2-线性渐变" class="headerlink" title="2.线性渐变"></a>2.线性渐变</h2><h4 id="属性-5"><a href="#属性-5" class="headerlink" title="属性"></a>属性</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">background-image: linear-gradient(</span><br><span class="line">	渐变方向,</span><br><span class="line">	颜色1 终点位置,</span><br><span class="line">	颜色2 终点位置,</span><br><span class="line">	……</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h4 id="取值-3"><a href="#取值-3" class="headerlink" title="取值"></a>取值</h4><p>渐变方向：可选<br>    to 方位名称<br>    角度度数<br>终点位置：可选<br>    百分比</p>
+<h2 id="3-径向渐变"><a href="#3-径向渐变" class="headerlink" title="3.径向渐变"></a>3.径向渐变</h2><h4 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h4><p>给按钮添加高光效果</p>
+<h4 id="属性-6"><a href="#属性-6" class="headerlink" title="属性"></a>属性</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">background-image: radial-grandient(</span><br><span class="line">	半径 at 圆心位置,</span><br><span class="line">	颜色1 终点位置,</span><br><span class="line">	颜色2 终点位置,</span><br><span class="line">	……</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h4 id="取值-4"><a href="#取值-4" class="headerlink" title="取值"></a>取值</h4><p>半径可以是2条，则为椭圆<br>圆心位置取值：像素单位数值&#x2F;百分比&#x2F;方位名词</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Web笔记Day04</title>
+    <url>/2023/12/24/2023-12-24-WebDay04/</url>
+    <content><![CDATA[<h1 id="一、响应式网页"><a href="#一、响应式网页" class="headerlink" title="一、响应式网页"></a>一、响应式网页</h1><h4 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a>解决方式</h4><ol>
+<li><p>媒体查询</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> (媒体特性)&#123;</span><br><span class="line">    选择器&#123;</span><br><span class="line">        样式;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Bootstrap<br>“简介、直观、强悍的前端开发框架，让web开发更迅速、简单”</p>
+</li>
+</ol>
+<h2 id="1-媒体查询"><a href="#1-媒体查询" class="headerlink" title="1. 媒体查询"></a>1. 媒体查询</h2><h4 id="媒体特性"><a href="#媒体特性" class="headerlink" title="媒体特性"></a>媒体特性</h4><p>max-width: 最大宽度<br>min-width: 最小宽度</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 屏幕宽度小于等于768，网页背景色是粉色--&gt;max-width */</span></span></span><br><span class="line"><span class="language-css">    <span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>)&#123;</span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">body</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: pink;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 屏幕宽度大于等于1200，网页背景色是绿色--&gt;min-width */</span></span></span><br><span class="line"><span class="language-css">    <span class="keyword">@media</span> (<span class="attribute">min-width</span>: <span class="number">1200px</span>)&#123;</span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">body</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: green;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="书写顺序"><a href="#书写顺序" class="headerlink" title="书写顺序"></a>书写顺序</h4><p>需求：<br>    默认网页背景色是灰色<br>    屏幕宽度大于等于768px，网页背景色是粉色<br>    屏幕宽度大于等于992px，网页背景色是绿色<br>    屏幕宽度大于等于1200px，网页背景色是skyblue<br>提示<br>    min-width(从小到大)<br>    max-width(从大到小)<br>    ●  一定要按顺序写，否则效果会被层叠消失。</p>
+<h4 id="案例：左侧隐藏"><a href="#案例：左侧隐藏" class="headerlink" title="案例：左侧隐藏"></a>案例：左侧隐藏</h4><p>需求：网页宽度小于等于768px则隐藏左侧区域。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    *&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">margin</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">padding</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.box</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.left</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>: <span class="number">500px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">background-color</span>: pink;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.main</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">flex</span>: <span class="number">1</span>; <span class="comment">/*占用剩余父级尺寸，否则因文字导致left挤压偏小 */</span></span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>: <span class="number">500px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">background-color</span>: skyblue;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="keyword">@media</span> (<span class="attribute">max-width</span>:<span class="number">768px</span>)&#123;</span></span><br><span class="line"><span class="language-css">        <span class="selector-class">.left</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">display</span>: none;<span class="comment">/*左侧消失*/</span></span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="完整写法"><a href="#完整写法" class="headerlink" title="完整写法"></a>完整写法</h4><p>了解：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> 关键词 媒体类型 <span class="keyword">and</span> (媒体特性) &#123;css代码&#125;</span><br></pre></td></tr></table></figure>
+
+<p>关键词 &#x2F; 逻辑操作符<br>    and<br>    only<br>    not</p>
+<p><strong>媒体类型</strong>是用来区分设备类型的，如屏幕设备、打印设备等，其中手机、电脑、平板都属于屏幕设备。</p>
+<table>
+<thead>
+<tr>
+<th>类型名称</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>屏幕</td>
+<td>screen</td>
+<td>带屏幕的设备</td>
+</tr>
+<tr>
+<td>打印预览</td>
+<td>print</td>
+<td>打印预览模式</td>
+</tr>
+<tr>
+<td>阅读器</td>
+<td>speech</td>
+<td>屏幕阅读模式</td>
+</tr>
+<tr>
+<td>不区分类型</td>
+<td>all</td>
+<td>默认值，包括以上3种情形</td>
+</tr>
+</tbody></table>
+<p> <strong>媒体特性</strong>主要用来描述媒体类型的具体特征，如当前屏幕的狂爱、分辨率、横屏或竖屏等。</p>
+<table>
+<thead>
+<tr>
+<th>特性名称</th>
+<th>属性</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>视口的宽和高</td>
+<td>width、heigth</td>
+<td>数值</td>
+</tr>
+<tr>
+<td>视口最大宽和高</td>
+<td>max-width、max-heigth</td>
+<td>数值</td>
+</tr>
+<tr>
+<td>视口最小宽和高</td>
+<td>min-width、min-heigth</td>
+<td>数值</td>
+</tr>
+<tr>
+<td>屏幕方向</td>
+<td>orientation</td>
+<td>portrait:竖屏<br />landscape:横屏</td>
+</tr>
+</tbody></table>
+<p>思考：<br>    当@media内css样式太多，代码复杂混乱，该如何解决？</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">@media (媒体特性)&#123;</span><br><span class="line">    选择器&#123;</span><br><span class="line">        ......</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>解决：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">media</span>=<span class="string">&quot;逻辑符 媒体类型 and (媒体特性)&quot;</span> <span class="attr">href</span>=<span class="string">&quot;xx.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>案例：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 视口宽度小于等于768px，网页背景色是粉色 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">media</span>=<span class="string">&quot;(max=width: 768px)&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./pink.css&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 视口宽度小于等于768px，网页背景色是粉色 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">media</span>=<span class="string">&quot;(min=width: 1200px)&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./green.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-Bootstrap"><a href="#2-Bootstrap" class="headerlink" title="2. Bootstrap"></a>2. Bootstrap</h2><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>Bootstrap是推特Twitter公司开发维护的前端UI框架，它提供了大量编写好的CSS样式，允许开发者结合一定HTML结构及JavaScript，快速编写功能完善的网页及常见交互效果。</p>
+<p>中文官网：<a href="https://www.bootcss.com/">https://www.bootcss.com</a></p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><ol>
+<li><p>下载：<br>下载Bootstrap V5中文文档–&gt;进入中文文档–&gt;下载 Bootstrap 生产文件<br>（bootsrtap.css为正常书写格式；bootstrap.min.css写在一行占空间小。单纯使用框架建议使用bootstrap.min.css）</p>
+</li>
+<li><p>使用：<br>引入Bootstrap CSS文件</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;../BootStrap/css/bootstrap.min.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>调用类名：container: 响应式布局版心类</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span>测试<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="栅格系统"><a href="#栅格系统" class="headerlink" title="栅格系统"></a>栅格系统</h4><p>栅格化是指将整个网页的宽度分成12等份，每个盒子占用对应的份数。<br>例如：一行排4个盒子，则每个盒子占3份即可（12&#x2F;4&#x3D;3）</p>
+<table>
+<thead>
+<tr>
+<th>Breakpoint断点</th>
+<th>Class infix分类中缀</th>
+<th>Dimensions尺寸</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Extra small</td>
+<td>None</td>
+<td>&lt;576px</td>
+</tr>
+<tr>
+<td>Small</td>
+<td>sm</td>
+<td>≥576px</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>md</td>
+<td>≥768px</td>
+</tr>
+<tr>
+<td>Large</td>
+<td>lg</td>
+<td>≥992px</td>
+</tr>
+<tr>
+<td>Extra large</td>
+<td>xl</td>
+<td>≥1200px</td>
+</tr>
+<tr>
+<td>Extra extra large</td>
+<td>xxl</td>
+<td>≥1400px</td>
+</tr>
+</tbody></table>
+<p>响应区间：</p>
+<table>
+<thead>
+<tr>
+<th><br /></th>
+<th>xs<br />&lt;576px</th>
+<th>sm<br />≥576px</th>
+<th>md<br />≥768px</th>
+<th>lg<br />≥992px</th>
+<th>xl<br />≥1200px</th>
+<th>xxl<br />≥1400px</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Container</td>
+<td>None(auto)</td>
+<td>540px</td>
+<td>720px</td>
+<td>960px</td>
+<td>1140px</td>
+<td>1320px</td>
+</tr>
+<tr>
+<td>Class prefix前缀</td>
+<td>.col-</td>
+<td>.col-sm-</td>
+<td>.col-md-</td>
+<td>.col-lg-</td>
+<td>.col-</td>
+<td>.col-xxl-</td>
+</tr>
+</tbody></table>
+<p>常用布局类：<br>▢  col-*- ：列（例如Lcol-xxl-3）<br>▢  row ：行</p>
+<p>代码：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">        视口宽度大于等于1200px,一行排4个盒子 -&gt;3</span></span><br><span class="line"><span class="comment">        视口宽度大于等于768px,一行排2个盒子 -&gt;6</span></span><br><span class="line"><span class="comment">        视口宽度大于等于576px,一行排1个盒子 -&gt;12</span></span><br><span class="line"><span class="comment">     --&gt;</span></span><br><span class="line">     <span class="comment">&lt;!-- 版心 -&gt; row -&gt; 子级 --&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-xl-3 col-md-6 col-sm-12&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-xl-3 col-md-6 col-sm-12&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-xl-3 col-md-6 col-sm-12&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-xl-3 col-md-6 col-sm-12&quot;</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>*显示调用类名的插件：IntelliSence for CSS class names in HTML</p>
+<h4 id="全局样式"><a href="#全局样式" class="headerlink" title="全局样式"></a>全局样式</h4><p>Button类<br>    ▢  btn：默认样式<br>    ▢  btn-success：成功<br>    ▢  btn-warning：警告<br>    ▢  ……<br>    ▢  按钮尺寸：btn-lg &#x2F; btn-sm</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-success btn-sm&quot;</span>&gt;</span>小绿色按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-warning btn-lg&quot;</span>&gt;</span>大黄色按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>表格类<br>    ▢  table：默认样式<br>    ▢  table-striped：隔行变色<br>    ▢  table-success：表格颜色(绿)<br>    ▢  ……</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">&quot;table table-striped&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span> <span class="attr">class</span>=<span class="string">&quot;table-success&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>年龄<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>性别<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>张三<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>18<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>男<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="组件-Components"><a href="#组件-Components" class="headerlink" title="组件(Components)"></a>组件(Components)</h4><ol>
+<li>引入样式表</li>
+<li>引入js文件</li>
+<li>复制结构，修改内容</li>
+</ol>
+<p>例如导航、轮播图等，在官网copy代码即可，需要自定义可以配合网页检查，寻找需要修改的元素。当想要覆盖Bootstrap样式需要在末尾添加 !important;</p>
+<h4 id="字体图标"><a href="#字体图标" class="headerlink" title="字体图标"></a>字体图标</h4><p>下载：<br>    导航&#x2F;Extend：图标库–&gt;安装–&gt;下载安装包–&gt;bootstarp-icons-1.X.X.zip</p>
+<p>使用：</p>
+<pre><code> 1. 复制font文件夹到项目目录
+ 2. 网页引入bootstrap-icon.css文件
+ 3. 调用CSS类名（图标对应的类名）
+</code></pre>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;../BootStrap/font/bootstrap-icons.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="comment">/* 美化字体图标 */</span></span></span><br><span class="line"><span class="language-css">        <span class="selector-class">.bi-android2</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">font-size</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">color</span>: green;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 安卓图标 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;bi-android2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><p>腾讯全端：略</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>23十七周周报</title>
+    <url>/2023/12/24/23%E5%8D%81%E4%B8%83%E5%91%A8%E5%91%A8%E6%8A%A5/</url>
+    <content><![CDATA[<h2 id="2023年12月11日-2023年12月17日"><a href="#2023年12月11日-2023年12月17日" class="headerlink" title="2023年12月11日-2023年12月17日"></a>2023年12月11日-2023年12月17日</h2><blockquote>
+<p>CodeWave</p>
+</blockquote>
+<h3 id="本周学习大纲"><a href="#本周学习大纲" class="headerlink" title="本周学习大纲"></a>本周学习大纲</h3><ol>
+<li><strong>web前端</strong>：移动适配：rem、less、vw；响应式网页：媒体查询、Bootstrap。</li>
+<li><strong>期末复习</strong>：数据结构</li>
+</ol>
+<h3 id="本周学习日历"><a href="#本周学习日历" class="headerlink" title="本周学习日历"></a>本周学习日历</h3><table>
+<thead>
+<tr>
+<th>日历</th>
+<th>学习内容</th>
+<th>其他</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>星期一</td>
+<td></td>
+<td>个人生活</td>
+</tr>
+<tr>
+<td>星期二</td>
+<td>Web</td>
+<td></td>
+</tr>
+<tr>
+<td>星期三</td>
+<td>Web</td>
+<td></td>
+</tr>
+<tr>
+<td>星期四</td>
+<td>Web</td>
+<td></td>
+</tr>
+<tr>
+<td>星期五</td>
+<td></td>
+<td>个人生活</td>
+</tr>
+<tr>
+<td>星期六</td>
+<td>Web</td>
+<td></td>
+</tr>
+<tr>
+<td>星期天</td>
+<td>Web</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="本周学习内容-及-收获"><a href="#本周学习内容-及-收获" class="headerlink" title="本周学习内容 及 收获"></a>本周学习内容 及 收获</h3><h4 id="银行管理系统"><a href="#银行管理系统" class="headerlink" title="银行管理系统"></a>银行管理系统</h4><h5 id="笔记："><a href="#笔记：" class="headerlink" title="笔记："></a>笔记：</h5><p><a href="https://mydrowsiness.github.io/2023/12/20/2023-12-20-WebDay03/">链接</a></p>
+<p><a href="https://mydrowsiness.github.io/2023/12/24/2023-12-24-WebDay04">链接</a></p>
+<h5 id="完成状态："><a href="#完成状态：" class="headerlink" title="完成状态："></a>完成状态：</h5><p>未完成本周任务。</p>
+<h5 id="学习内容："><a href="#学习内容：" class="headerlink" title="学习内容："></a>学习内容：</h5><ol>
+<li>学习了移动适配的相关知识内容。</li>
+<li>学习了响应式网页的编写以及Bootstrap模板的使用。</li>
+</ol>
+<h5 id="学习收获"><a href="#学习收获" class="headerlink" title="学习收获"></a>学习收获</h5><p>了解并学会了web页面的各种屏幕的适配，收获很多，但是感觉暂时用不上会很容易忘记。打算寒假利用这个知识来编写一个网页来作为复习。然后就是响应式网页，真的很有用，能让我的web页面更加专业好用，学到了使用Bootstrap模板，但是使用模板也蛮繁杂的，需要看懂模板的代码，需要修改&#x2F;覆盖模板的样式挺麻烦的。总之这周学到的web知识很有用，学的内容不多。</p>
+<h3 id="下周学习大纲"><a href="#下周学习大纲" class="headerlink" title="下周学习大纲"></a>下周学习大纲</h3><ol>
+<li><strong>JS</strong>：学完</li>
+<li><strong>苍穹外卖</strong>：继续完善</li>
+<li><strong>复习</strong>：准备期末考试</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>Web笔记Day03</title>
+    <url>/2023/12/20/2023-12-20-WebDay03/</url>
+    <content><![CDATA[<h1 id="一、移动适配"><a href="#一、移动适配" class="headerlink" title="一、移动适配"></a>一、移动适配</h1><h4 id="谷歌模拟器"><a href="#谷歌模拟器" class="headerlink" title="谷歌模拟器"></a>谷歌模拟器</h4><p>谷歌浏览器自带的模拟器，可以模拟其他设备，使查看不同端的css效果更方便。（edge浏览器也有，就是“检查”右边的图标）</p>
+<h4 id="屏幕分辨率"><a href="#屏幕分辨率" class="headerlink" title="屏幕分辨率"></a>屏幕分辨率</h4><ol>
+<li>屏幕分辨率：纵横向上的像素点数，单位是px。</li>
+<li>pc分辨率<br>1920*1080<br>   1366*768<br>   ……</li>
+<li>缩放150%<br>1920&#x2F;150%<br>   1080&#x2F;150%</li>
+<li>总结：<br>硬件分辨率——物理分辨率（出厂设置）<br>   缩放调节的分辨率——逻辑分辨率（软件&#x2F;驱动设置）</li>
+</ol>
+<p><strong>PS:网页的PC&#x2F;移动端均参考逻辑分辨率。</strong></p>
+<h4 id="视口"><a href="#视口" class="headerlink" title="视口"></a>视口</h4><ol>
+<li><p>手机屏幕尺寸不同，网页宽度均为100%。</p>
+</li>
+<li><p>网页的宽度和逻辑分辨率尺寸相同。</p>
+</li>
+<li><p>视口：<br>显示HTML网页的区域，用来约束HTML尺寸（vscode自动生成）</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    &lt;!-视口标签：规定HTML的尺寸，让HTML的宽度=逻辑分辨率的宽度/设备的宽度--&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>width&#x3D;device-width: 视口宽度&#x3D;设备宽度<br>initial-scale&#x3D;1.0 缩放1倍（不缩放）</p>
+</li>
+</ol>
+<h4 id="二倍图"><a href="#二倍图" class="headerlink" title="二倍图"></a>二倍图</h4><ol>
+<li>概念：设计稿里面每个元素的尺寸倍数。</li>
+<li>作用：防止图片在高分辨率屏幕下模糊失真。</li>
+<li>现阶段设计稿参考IPhone6&#x2F;7&#x2F;8，设备宽度375px产出设计稿。</li>
+<li>二倍图设计稿尺寸：750px。</li>
+</ol>
+<p>使用设计稿：点击设计稿(显示宽750px)–&gt;设计图2x &#x2F; 像素密度@2x。</p>
+<h4 id="适配方案"><a href="#适配方案" class="headerlink" title="适配方案"></a>适配方案</h4><ol>
+<li>宽度适配：宽度自适应。<br>▢  百分比布局<br>▢  Flex布局</li>
+<li>等比适配：宽高等比缩放。<br>▢  rem<br>▢  vw</li>
+</ol>
+<h1 id="二、rem"><a href="#二、rem" class="headerlink" title="二、rem"></a>二、rem</h1><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><ol>
+<li>rem单位，是相对单位。</li>
+<li>rem单位是相对于HTML标签字号计算结果。</li>
+<li>1rem &#x3D; 1HTML字号大小。</li>
+</ol>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    *&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">margin</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">padding</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 1. 给HTML标签加字号 */</span></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">html</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">font-size</span>: <span class="number">30px</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 2. 使用rem单位书写尺寸 */</span></span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.box</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>: <span class="number">5rem</span>;  <span class="comment">/* 30px*5 = 150px */</span></span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>: <span class="number">3rem</span>;  <span class="comment">/* 30px*3 = 90px */</span>         				<span class="attribute">background-color</span>: pink;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h4><ol>
+<li><p>手机屏幕大小不同，分辨率不同，如何设置不同的HTML标签字号？</p>
+<p>答：媒体查询：<br>媒体查询能够检测视口的宽度，然后编写差异化的CSS样式。<br>当某个条件成立，执行对应的CSS样式</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">@media (媒体特性)&#123;</span><br><span class="line">    选择器&#123;</span><br><span class="line">        CSS属性</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 视口宽度是375，网页背景色是绿色 */</span></span></span><br><span class="line"><span class="language-css">    <span class="keyword">@media</span> (<span class="attribute">width</span>:<span class="number">375px</span>)&#123;</span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">body</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: green;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>PS: 当屏幕缩放比125% –&gt; html宽375.2px @media不执行</p>
+</li>
+<li><p>设备宽度不同，HTML标签字号设置多少合适？</p>
+<p>答：设备宽度大，元素尺寸大。设备宽度小，元素尺寸小。<br>目前rem布局方案中，将网页等待分成10份，HTML标签的字号为视口宽度的1&#x2F;10。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"><span class="comment">/*该方法繁琐难用*/</span></span></span><br><span class="line"><span class="language-css">    *&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">margin</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">padding</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 1. 使用媒体查询，给不同视口的屏幕设置不同的HTML字号 */</span></span></span><br><span class="line"><span class="language-css">    <span class="keyword">@media</span> (<span class="attribute">width</span>:<span class="number">320px</span>)&#123;</span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">html</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">font-size</span>: <span class="number">32px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="keyword">@media</span> (<span class="attribute">width</span>:<span class="number">375px</span>)&#123;</span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">html</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">font-size</span>: <span class="number">37.5px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="keyword">@media</span> (<span class="attribute">width</span>:<span class="number">414px</span>)&#123;</span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">html</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">font-size</span>: <span class="number">41.4px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 2. 使用rem单位书写尺寸 */</span></span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.box</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>: <span class="number">5rem</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>: <span class="number">3rem</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">background-color</span>: pink;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>rem-flexible.js</strong><br>flexible.js是手机淘宝开发出来的一个用于适配移动端的js库。<br>核心原理就是根据不同的视口宽度给网页中html根节点设置不同的font-size。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    ......</span><br><span class="line">    &lt;script src=&quot;./js/flexible.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>工作中，书写代码的尺寸要参照设计稿尺寸，设计稿中是px还是rem?<br>——rem</p>
+</li>
+<li><p>如何确定rem的数值？<br>目标：计算68px是多少个rem（设计稿适配375px视口）<br>N*37.5&#x3D;68    N&#x3D;68&#x2F;37.5<br>rem单位尺寸：<br>▢  确认基准根字号<br>► 查看设计稿宽度→确定参考设备宽度（视口宽度）→确定基准跟字号（1&#x2F;10视口宽度）<br>▢  rem单位尺寸<br>► rem单位的尺寸&#x3D;px单位数值 &#x2F; 基准根字号</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">	<span class="comment">/* 68*29 */</span></span></span><br><span class="line"><span class="language-css">    <span class="selector-tag">div</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>: <span class="number">1.813rem</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>: <span class="number">0.773rem</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">background-color</span>: pink;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="三、less"><a href="#三、less" class="headerlink" title="三、less"></a>三、less</h1><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><ol>
+<li>less是一个CSS预处理器，Less文件后缀是.less。扩充了CSS语言，使CSS具备一定的逻辑性、计算能力。</li>
+<li>浏览器不识别Less代码，目前阶段，网页要引入对应的CSS文件。</li>
+<li>VS Code插件：Easy LESS,保存less文件后&#x3D;&#x3D;自动生成&#x3D;&#x3D;对应的CSS文件。</li>
+</ol>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.father</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: red;</span><br><span class="line">    <span class="attribute">width</span>: (<span class="number">68</span> / <span class="number">37.5rem</span>);<span class="comment">//拥有计算能力</span></span><br><span class="line">    <span class="selector-class">.son</span>&#123;</span><br><span class="line">        <span class="attribute">height</span>: (<span class="number">29</span> / <span class="number">37.5rem</span>);<span class="comment">//逻辑性更好</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">1.81333333rem</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.father</span> <span class="selector-class">.son</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0.77333333rem</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><ol>
+<li>单行注释(CSS不支持，生成CSS后不显示)<br>► 语法：&#x2F;&#x2F;注释内容<br>► 快捷键：ctrl+&#x2F;</li>
+<li>块注释<br>► 语法：&#x2F;*注释内容*&#x2F;<br>► 快捷键：Shift+Alt+A</li>
+</ol>
+<h4 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h4><p>加减乘直接书写计算表达式。<br>除法需要添加小括号或.    （推荐使用小括号）</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50</span> + <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200</span> - <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100</span> * <span class="number">2px</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//除法</span></span><br><span class="line">    <span class="attribute">width</span>: (<span class="number">68</span>/<span class="number">37.5rem</span>);</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">68</span>./<span class="number">37.5rem</span>;</span><br><span class="line">    <span class="comment">//如果表达式有多个单位，最终CSS里面以第一个单位为准</span></span><br><span class="line">    <span class="attribute">height</span>: (<span class="number">200px</span> / <span class="number">37.5rem</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">1.81333333rem</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">1.81333333rem</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">5.33333333px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="嵌套"><a href="#嵌套" class="headerlink" title="嵌套"></a>嵌套</h4><p>作用：快速生成后代选择器</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line">.父级选择器&#123;</span><br><span class="line">    <span class="comment">//父级样式</span></span><br><span class="line">    .子级选择器&#123;</span><br><span class="line">        <span class="comment">//子级样式</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.father</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>:red;</span><br><span class="line">    <span class="selector-class">.son</span>&#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">        <span class="selector-tag">a</span>&#123;</span><br><span class="line">            <span class="attribute">color</span>: green;</span><br><span class="line">            <span class="comment">// &amp; 表示的是当前选择器，代码写到谁的大括号里面就表示谁不会生成后代选择器</span></span><br><span class="line">            <span class="comment">//应用：配合hover伪类选择器或nth-child结构伪类选择器使用</span></span><br><span class="line">            <span class="selector-tag">&amp;</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">                <span class="attribute">color</span>: blue;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.father</span> <span class="selector-class">.son</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.father</span> <span class="selector-class">.son</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: green;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.father</span> <span class="selector-class">.son</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p>概念：容器，存储数据。<br>作用：存储数据，方便使用和修改。<br>语法：<br>    ► 定义变量: @变量名 : 数据;<br>    ► 使用变量: CSS属性 : @变量名;</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1. 定义变量</span></span><br><span class="line"><span class="comment">//@myColor: pink; --&gt; 书写与统一更改都很方便</span></span><br><span class="line"><span class="variable">@myColor:</span> <span class="built_in">rgb</span>(<span class="number">213</span>, <span class="number">114</span>, <span class="number">131</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//2. 使用变量</span></span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">@myColor</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="variable">@myColor</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">a</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">@myColor</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#d57283</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#d57283</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#d57283</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h4><p>作用：导入less公共样式文件。<br>语法：导入：@import “文件路径”;<br>提示：如果是less文件可以省略后缀。</p>
+<p>防止不同less文件生成多个CSS文件，将其他less导入到index.less中</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@import</span> <span class="string">&quot;./less变量.less&quot;</span>;</span><br><span class="line"><span class="keyword">@import</span> <span class="string">&quot;./less嵌套.less&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*@myColor: pink;*/</span></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#d57283</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#d57283</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#d57283</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.father</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.father</span> <span class="selector-class">.son</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.father</span> <span class="selector-class">.son</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: green;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.father</span> <span class="selector-class">.son</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h4><p>写法：在less文件的第一行添加 &#x2F;&#x2F; out: 存储URL<br>提示：文件夹名称后面添加&#x2F;</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="comment">// out: ./css/   </span></span><br><span class="line"></span><br><span class="line"><span class="comment">// out: ./index.css</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// out: ./mycss/index.css</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="禁止导出"><a href="#禁止导出" class="headerlink" title="禁止导出"></a>禁止导出</h4><p>例如在前文需要导入到index.less的less文件就不需要导出自己（生成CSS）<br>写法：在less文件第一行添加：&#x2F;&#x2F;out:false</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="comment">// out:false</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="四、VW"><a href="#四、VW" class="headerlink" title="四、VW"></a>四、VW</h1><h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h4><ol>
+<li>此为相对单位</li>
+<li>相对视口尺寸计算结果<br>vw: &#x3D;&#x3D;v&#x3D;&#x3D;iewport &#x3D;&#x3D;w&#x3D;&#x3D;idth<br>▢  1vw&#x3D;1%视口宽度<br>vh: &#x3D;&#x3D;v&#x3D;&#x3D;iewport &#x3D;&#x3D;h&#x3D;&#x3D;eight<br>▢  1vh&#x3D;1%视口高度</li>
+</ol>
+<h4 id="vw布局"><a href="#vw布局" class="headerlink" title="vw布局"></a>vw布局</h4><ol>
+<li>确定设计稿对应的vw尺寸（1&#x2F;100视口宽度）<br>► 查看设计稿宽度 –&gt; 确定参考设备宽度（视口宽度） –&gt; 确定vw尺寸（1&#x2F;100视口宽度）</li>
+<li>vw单位尺寸&#x3D;想要的尺寸px &#x2F; (1&#x2F;100视口宽度)</li>
+</ol>
+<h4 id="vh单位问题"><a href="#vh单位问题" class="headerlink" title="vh单位问题"></a>vh单位问题</h4><p>思考：开发中，能不能vw和vh混用呢？<br>    ► 不能<br>    ► vh是1&#x2F;100视口高度，全面屏视口高度尺寸大，如果混用可能会导致盒子变形。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>23年16周周报</title>
+    <url>/2023/12/18/23%E5%8D%81%E5%85%AD%E5%91%A8%E5%91%A8%E6%8A%A5/</url>
+    <content><![CDATA[<h2 id="2023年12月11日-2023年12月17日"><a href="#2023年12月11日-2023年12月17日" class="headerlink" title="2023年12月11日-2023年12月17日"></a>2023年12月11日-2023年12月17日</h2><blockquote>
+<p>tag：CodeWave</p>
+</blockquote>
+<h3 id="本周学习大纲"><a href="#本周学习大纲" class="headerlink" title="本周学习大纲"></a>本周学习大纲</h3><ol>
+<li><strong>Web前端：</strong>空间转换、动画。</li>
+<li><strong>搭建hexo博客：</strong>下载hexo、搭建博客、使用博客主题、自定义主题内容。</li>
+<li><strong>考试准备：</strong>英语四级</li>
+</ol>
+<h3 id="本周学习日历"><a href="#本周学习日历" class="headerlink" title="本周学习日历"></a>本周学习日历</h3><table>
+<thead>
+<tr>
+<th>日历</th>
+<th>学习内容</th>
+<th>其他</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>星期一</td>
+<td>Web</td>
+<td></td>
+</tr>
+<tr>
+<td>星期二</td>
+<td>Web</td>
+<td></td>
+</tr>
+<tr>
+<td>星期三</td>
+<td>搭建博客</td>
+<td></td>
+</tr>
+<tr>
+<td>星期四</td>
+<td>使用博客主题&#x2F;自定义博客内容</td>
+<td></td>
+</tr>
+<tr>
+<td>星期五</td>
+<td></td>
+<td>学英语</td>
+</tr>
+<tr>
+<td>星期六</td>
+<td></td>
+<td>四级考试&#x2F;休息</td>
+</tr>
+<tr>
+<td>星期天</td>
+<td></td>
+<td>个人生活</td>
+</tr>
+</tbody></table>
+<h3 id="本周学习内容-及-收获"><a href="#本周学习内容-及-收获" class="headerlink" title="本周学习内容 及 收获"></a>本周学习内容 及 收获</h3><hr>
+<h4 id="Web前端"><a href="#Web前端" class="headerlink" title="Web前端"></a>Web前端</h4><h5 id="笔记："><a href="#笔记：" class="headerlink" title="笔记："></a>笔记：</h5><p><a href="https://mydrowsiness.github.io/2023/12/18/2023-12-17-WebDay02/">Web-Day02</a></p>
+<h5 id="完成状态："><a href="#完成状态：" class="headerlink" title="完成状态："></a>完成状态：</h5><p>未完成本周任务。美化博客花了很久的时间，四级考试前后懈怠了没有学习。</p>
+<h5 id="学习内容："><a href="#学习内容：" class="headerlink" title="学习内容："></a>学习内容：</h5><ol>
+<li>空间转换：平移、旋转、视距、立体呈现、缩放</li>
+<li>动画：走马灯效果</li>
+</ol>
+<h5 id="学习收获"><a href="#学习收获" class="headerlink" title="学习收获"></a>学习收获</h5><p>web学习的内容并不多，主要是学了空间转换和动画效果。但是我花了很多时间美化博客，让我摸清了博客跟目录文件和代码作用，自主学习能力增强了一丢丢。<br>我在美化博客的时候使用了阿里OSS库里面存储的图片，第二天发现OSS欠费了…现在博客就是无图片状态了。</p>
+<h3 id="下周学习大纲"><a href="#下周学习大纲" class="headerlink" title="下周学习大纲"></a>下周学习大纲</h3><ol>
+<li><strong>Web</strong>：基础部分学完。</li>
+<li><strong>javaweb</strong>:复习javaweb、完善苍穹外卖。</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>24寒假周报01</title>
+    <url>/2024/01/22/24%E5%AF%92%E5%81%87%E5%91%A8%E6%8A%A501/</url>
+    <content><![CDATA[<h2 id="2024年1月15日-2024年1月21日"><a href="#2024年1月15日-2024年1月21日" class="headerlink" title="2024年1月15日-2024年1月21日"></a>2024年1月15日-2024年1月21日</h2><blockquote>
+<p>CodeWave</p>
+</blockquote>
+<h3 id="本周学习大纲"><a href="#本周学习大纲" class="headerlink" title="本周学习大纲"></a>本周学习大纲</h3><ol>
+<li><strong>学习JavaScript</strong>：学完Day1、2、3</li>
+<li><strong>完善苍穹外卖</strong>：</li>
+</ol>
+<h3 id="本周学习日历"><a href="#本周学习日历" class="headerlink" title="本周学习日历"></a>本周学习日历</h3><table>
+<thead>
+<tr>
+<th>日历</th>
+<th>学习内容</th>
+<th>其他</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>星期一</td>
+<td></td>
+<td>个人生活</td>
+</tr>
+<tr>
+<td>星期二</td>
+<td>jaDay01</td>
+<td></td>
+</tr>
+<tr>
+<td>星期三</td>
+<td>jsDay01&#x2F;苍穹外卖</td>
+<td></td>
+</tr>
+<tr>
+<td>星期四</td>
+<td>jsDay02&#x2F;苍穹外卖</td>
+<td></td>
+</tr>
+<tr>
+<td>星期五</td>
+<td>jsDay02&#x2F;苍穹外卖</td>
+<td></td>
+</tr>
+<tr>
+<td>星期六</td>
+<td>苍穹外卖</td>
+<td>个人生活</td>
+</tr>
+<tr>
+<td>星期天</td>
+<td></td>
+<td>个人生活</td>
+</tr>
+</tbody></table>
+<h3 id="本周学习内容-及-收获"><a href="#本周学习内容-及-收获" class="headerlink" title="本周学习内容 及 收获"></a>本周学习内容 及 收获</h3><h4 id="银行管理系统"><a href="#银行管理系统" class="headerlink" title="银行管理系统"></a>银行管理系统</h4><h5 id="笔记："><a href="#笔记：" class="headerlink" title="笔记："></a>笔记：</h5><p>链接 or 本地</p>
+<h5 id="完成状态："><a href="#完成状态：" class="headerlink" title="完成状态："></a>完成状态：</h5><p>未完成本周任务</p>
+<h5 id="学习内容："><a href="#学习内容：" class="headerlink" title="学习内容："></a>学习内容：</h5><ol>
+<li>js的书写、变量、常量</li>
+<li>Redis常用命令</li>
+<li>Redist_Spring</li>
+<li>苍穹外卖店铺营业状态</li>
+</ol>
+<h5 id="学习收获"><a href="#学习收获" class="headerlink" title="学习收获"></a>学习收获</h5><p>学习了JS基础部分，JavaScript与java有极多的相似之处很好理解，易于上手。<br>本周很多时间都在干别的事情，学习的内容不多，收获很少。</p>
+<h3 id="下周学习大纲"><a href="#下周学习大纲" class="headerlink" title="下周学习大纲"></a>下周学习大纲</h3><ol>
+<li><strong>继续完善苍穹外卖</strong></li>
+<li><strong>开始学习MybatisPlus</strong></li>
+<li><strong>学习JavaScript</strong></li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>Web笔记Day02</title>
+    <url>/2023/12/18/2023-12-17-WebDay02/</url>
+    <content><![CDATA[<h1 id="一、空间转换"><a href="#一、空间转换" class="headerlink" title="一、空间转换"></a>一、空间转换</h1><h2 id="1-空间转换-平移"><a href="#1-空间转换-平移" class="headerlink" title="1. 空间转换-平移"></a>1. 空间转换-平移</h2><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>空间，是从坐标轴角度定义的X、Y和Z三条坐标轴构成了一个立体空间；<br>Z轴位置与视线方向相同，正方向指向我。</p>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line">transform: translate3d(x,y,z);</span><br><span class="line">transform: translateX();</span><br><span class="line">transform: translateY();</span><br><span class="line">transform: translateZ();</span><br></pre></td></tr></table></figure>
+
+<h4 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h4><p>正负均可<br>像素单位数值<br>百分比(参照盒子自身尺寸计算结果)</p>
+<p>$\color{red}{PS: 3d小括号里面必须逗号分隔开三个数，否则无效果。}$</p>
+<h2 id="2-视距-perspective"><a href="#2-视距-perspective" class="headerlink" title="2. 视距 perspective"></a>2. 视距 perspective</h2><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><p>指定了观察者与Z&#x3D;0平面的距离，为元素添加透视效果。</p>
+<h4 id="透视效果"><a href="#透视效果" class="headerlink" title="透视效果"></a>透视效果</h4><p>近大远小、近实远虚。</p>
+<h4 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h4><p>添加给父级，取值范围800-1200。<br>perspective：视距；<br>PS:视距属性必须添加给直接父级，否则无效。视距设置过大，效果不明显，视距设置过小，直接乎到脸上。</p>
+<h2 id="3-空间转换-旋转"><a href="#3-空间转换-旋转" class="headerlink" title="3. 空间转换-旋转"></a>3. 空间转换-旋转</h2><h4 id="书写"><a href="#书写" class="headerlink" title="书写"></a>书写</h4><p>transform: rotateZ(角度deg); &#x2F;&#x2F;沿着Z轴旋转，效果跟平面旋转效果一样。<br>transform: rotateX(角度deg); &#x2F;&#x2F;正值向后倒，负值往我扑。<br>transform: rotateY(角度deg);<br>PS:如果不给父级设置perspective，则图仅压缩，无近大远小看不出旋转。</p>
+<h4 id="左手法则"><a href="#左手法则" class="headerlink" title="左手法则"></a>左手法则</h4><p>根据旋转方向确定取正负<br>左手握住旋转轴，拇指指向正值方向，其他四个手指弯曲方向为旋转正值方向。</p>
+<h4 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h4><p>rotate3d(x,y,z,角度度数)：用来设置自定义旋转轴的位置及旋转的角度。<br>x,y,z取值为0-1之间的数字。</p>
+<h2 id="4-立体呈现"><a href="#4-立体呈现" class="headerlink" title="4. 立体呈现"></a>4. 立体呈现</h2><h4 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h4><p>设置元素的子元素是位于3D空间中还是平面中</p>
+<h4 id="属性名"><a href="#属性名" class="headerlink" title="属性名"></a>属性名</h4><p>transform-style</p>
+<h4 id="属性值"><a href="#属性值" class="headerlink" title="属性值"></a>属性值</h4><p>flat:子级处于平面中。<br>preserve-3d：子级处于3D空间。</p>
+<h4 id="呈现步骤"><a href="#呈现步骤" class="headerlink" title="呈现步骤"></a>呈现步骤</h4><p>1.父元素添加transform-style: preserve-3d;<br>2.子级定位<br>3.调整子盒子的位置（位移或旋转）</p>
+<h2 id="5-空间转换-缩放"><a href="#5-空间转换-缩放" class="headerlink" title="5. 空间转换-缩放"></a>5. 空间转换-缩放</h2><h4 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h4><p>transform:scale3d(x,y,z);<br>transform:scaleX();<br>transform:scaleY();<br>transform:scaleZ();</p>
+<h1 id="二、动画"><a href="#二、动画" class="headerlink" title="二、动画"></a>二、动画</h1><p>$\color{maroon}{animation:加强版的过渡。}​$</p>
+<h2 id="1-过渡与动画"><a href="#1-过渡与动画" class="headerlink" title="1. 过渡与动画"></a>1. 过渡与动画</h2><p>过渡：实现两个状态间的变化过程<br>动画：实现多个状态见的变化过程，动画过程可控（虫回复播放、最终画面，是否暂停）</p>
+<h2 id="2-动画实现步骤"><a href="#2-动画实现步骤" class="headerlink" title="2. 动画实现步骤"></a>2. 动画实现步骤</h2><h4 id="定义动画"><a href="#定义动画" class="headerlink" title="定义动画"></a>定义动画</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--两个状态--&gt;</span></span><br><span class="line">@keyframes 动画名称 1&#123;</span><br><span class="line">    from &#123;&#125;</span><br><span class="line">    to &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">&lt;!--多个状态--&gt;</span></span><br><span class="line">@keyframes 动画名称2 &#123;</span><br><span class="line">    0% &#123;&#125;</span><br><span class="line">    10% &#123;&#125;</span><br><span class="line">    ……</span><br><span class="line">    100% &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用动画"><a href="#使用动画" class="headerlink" title="使用动画"></a>使用动画</h4><p>animation: 动画名称 动画时长s；</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.box</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">background-color</span>: pink;</span></span><br><span class="line"><span class="language-css">        <span class="comment">/*使用动画*/</span></span></span><br><span class="line"><span class="language-css">        <span class="attribute">animation</span>: change <span class="number">1s</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="comment">/*动画一：宽度从200变化到800*/</span></span></span><br><span class="line"><span class="language-css">    <span class="keyword">@keyframes</span> change&#123;</span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">from</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">to</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">800px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="comment">/*</span></span></span><br><span class="line"><span class="comment"><span class="language-css">    动画二：从200*100变化到300*300再变化到800*500</span></span></span><br><span class="line"><span class="comment"><span class="language-css">    (n%：动画时长百分比)</span></span></span><br><span class="line"><span class="comment"><span class="language-css">    */</span></span></span><br><span class="line"><span class="language-css">    <span class="keyword">@keyframes</span> change&#123;</span></span><br><span class="line"><span class="language-css">        <span class="number">0%</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">200px</span>;</span></span><br><span class="line"><span class="language-css">            heoght: <span class="number">100px</span></span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="number">20%</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">height</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="number">100%</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">800px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">height</span>: <span class="number">500px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    &#125; </span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="animation属性"><a href="#animation属性" class="headerlink" title="animation属性"></a>animation属性</h4><p><strong>普通写法：</strong><br>animation: 动画名称 动画时长s 速度曲线 延迟时间 重复次数 动画方向 执行完毕时状态；<br>$\color</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>JavaScript笔记Day01</title>
+    <url>/2024/01/22/JavaScriptDay01/</url>
+    <content><![CDATA[<h3 id="一、软件"><a href="#一、软件" class="headerlink" title="一、软件"></a>一、软件</h3><h4 id="1-截图软件"><a href="#1-截图软件" class="headerlink" title="1. 截图软件"></a>1. 截图软件</h4><p>Snipaste</p>
+<table>
+<thead>
+<tr>
+<th>重点快捷键</th>
+<th>注意：如果f1和f3不好用，请用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>f1 截图</td>
+<td>fn + f1</td>
+</tr>
+<tr>
+<td>f3 定在屏幕上</td>
+<td>fn + f3</td>
+</tr>
+<tr>
+<td>取色：shift切换</td>
+<td>fn+eac键是”锁定功能“</td>
+</tr>
+</tbody></table>
+<h4 id="2-画图软件"><a href="#2-画图软件" class="headerlink" title="2. 画图软件"></a>2. 画图软件</h4><p>Zoomlt</p>
+<table>
+<thead>
+<tr>
+<th>重点快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ctrl + 1 放大</td>
+</tr>
+<tr>
+<td>ctrl + 2 画图</td>
+</tr>
+<tr>
+<td>画图的时候按住ctrl是矩形</td>
+</tr>
+<tr>
+<td>画图的时候按住tab是椭圆</td>
+</tr>
+<tr>
+<td>画图的时候按字母可以改变颜色：r红色 b蓝色 g绿色 p粉色 o橙色</td>
+</tr>
+</tbody></table>
+<h4 id="3-思维导图"><a href="#3-思维导图" class="headerlink" title="3. 思维导图"></a>3. 思维导图</h4><p>XMind</p>
+<table>
+<thead>
+<tr>
+<th>重点快捷键</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>enter 同级</td>
+</tr>
+<tr>
+<td>tab 下级</td>
+</tr>
+</tbody></table>
+<h3 id="二、JavaScript介绍"><a href="#二、JavaScript介绍" class="headerlink" title="二、JavaScript介绍"></a>二、JavaScript介绍</h3><h5 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h5><ul>
+<li><pre><code class="mermaid">graph TD
+A(JavaScript)==&gt;B(ECMAScript)
+A==&gt;C(Web APIs)
+C==&gt;D(DOM)
+C==&gt;E(Bom)
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">1. JavaScript</span><br><span class="line">   是一种运行在客户端（浏览器）的编程语言，实现人机交互效果。</span><br><span class="line">2. 作用</span><br><span class="line">   网页特效（监听用户的一些行为让网页做出对应的反馈）</span><br><span class="line">   表单校验（针对表单数据的合法性进行判断）</span><br><span class="line">   数据交互（获取后台的数据，渲染到前端）</span><br><span class="line">   服务端编程（node.js）</span><br><span class="line">3. JavaScript的组成</span><br><span class="line">   - ECMAScript:</span><br><span class="line">     规定了js基础语法核心知识。</span><br><span class="line">     比如：变量、分支语句、循环语句、对象等等。</span><br><span class="line">   - Web APIs：</span><br><span class="line">     DOM 操作文档，比如对页面元素进行移动、大小、添加删除等操作</span><br><span class="line">     BOM 操作浏览器，比如页面弹窗，检测窗口宽度、存储数据到浏览器等</span><br><span class="line"></span><br><span class="line">JS权威网站：[mdn](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript)</span><br><span class="line"></span><br><span class="line">4. 体验(按钮点击变色)</span><br><span class="line"></span><br><span class="line">   ```html</span><br><span class="line">   &lt;body&gt;</span><br><span class="line">     &lt;button class=&quot;pink&quot;&gt;按钮1&lt;/button&gt;</span><br><span class="line">     &lt;button&gt;按钮2&lt;/button&gt;</span><br><span class="line">     &lt;button&gt;按钮3&lt;/button&gt;</span><br><span class="line">     &lt;button&gt;按钮4&lt;/button&gt;</span><br><span class="line">     &lt;script&gt;</span><br><span class="line">       let bts = document.querySelectorAll(&#x27;button&#x27;)</span><br><span class="line">       for (let i=0;i&lt;bts.length;i++)&#123;</span><br><span class="line">         bts[i].addEventListener(&#x27;click&#x27;,function()&#123;</span><br><span class="line">           document.querySelector(&#x27;.pink&#x27;).className=&#x27;&#x27;</span><br><span class="line">           this.className=&#x27;pink&#x27;</span><br><span class="line">         &#125;)</span><br><span class="line">       &#125;</span><br><span class="line">     &lt;/script&gt;</span><br><span class="line">   &lt;/body&gt;</span><br></pre></td></tr></table></figure>
+</code></pre>
+</li>
+</ul>
+<h5 id="JavaScript书写位置"><a href="#JavaScript书写位置" class="headerlink" title="JavaScript书写位置"></a>JavaScript书写位置</h5><ol>
+<li><p>内部JavaScript<br>直接在html文件里，用script标签包住<br>规范：script标签写在</body>上面（放在最底端）<br>拓展：alert(‘你好，js’)页面弹出警告对话框</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 内部js --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//页面弹出警告框</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">alert</span>(<span class="string">&#x27;你好，js&#x27;</span>)</span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>外部JavaScript<br>代码写在以.js结尾的文件里<br>语法：通过script标签，引入到html页面中。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;./js/03-书写位置-外部.js&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// 中间不要写内容（写了也不执行）</span></span></span><br><span class="line"><span class="language-javascript">  </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">alert</span>(<span class="string">&#x27;我是外部的JS文件&#x27;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>内联JavaScript<br>代码标签写在标签内部<br>语法：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">onlick</span>=<span class="string">&quot;alert(&#x27;逗你玩&#x27;)&quot;</span>&gt;</span>点击我月薪过万<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="JavaScript注释"><a href="#JavaScript注释" class="headerlink" title="JavaScript注释"></a>JavaScript注释</h5><ol>
+<li>单行注释<br>符号：&#x2F;&#x2F;<br>   作用：&#x2F;&#x2F;右边这一行的代码会被忽略<br>   快捷键：ctrl + &#x2F;</li>
+<li>块注释<br>符号：&#x2F;*  *&#x2F;<br>   作用：在&#x2F;* 和 *&#x2F; 之间的所有内容都会被忽略<br>   快捷键：shift + alt + A</li>
+</ol>
+<h5 id="JavaScript-结束符"><a href="#JavaScript-结束符" class="headerlink" title="JavaScript 结束符"></a>JavaScript 结束符</h5><p>​	作用： 使用英文的 “  ;  ” 代表语句结束。<br>​	实际情况： 实际开发中，可写可不写, 浏览器(JavaScript 引擎) 可以自动推断语句的结束位置。<br>​	现状： 在实际开发中，越来越多的人主张，书写 JavaScript 代码时省略结束符。<br>​	约定：为了风格统一，结束符要么每句都写，要么每句都不写（按照团队要求）。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	<span class="title function_">alert</span>(<span class="string">&quot;书写1&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">alert</span>(<span class="string">&quot;书写2&quot;</span>)</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="JavaScript-输入输出语"><a href="#JavaScript-输入输出语" class="headerlink" title="JavaScript 输入输出语"></a>JavaScript 输入输出语</h5><ol>
+<li><p>概念:<br>输出和输入也可理解为人和计算机的交互，用户通过键盘、鼠标等向计算机输入信息，计算机处理后再展示结果给用户，这便是一次输入和输出的过程。</p>
+</li>
+<li><p>输出语法：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">document.write(&#x27;要输出的内容&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>作用：向body语句输出内容</p>
+<p>注意：如果输出内容写的是标签，也会被解析成网页元素</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">alert(&#x27;要输出的内容&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>作用：页面弹出警告对话框</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">console.log(&#x27;控制台打印&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>作用：控制台输出语法，程序员调式使用</p>
+</li>
+<li><p>输入语法：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">prompt(&#x27;请输入您的姓名：&#x27;)</span><br></pre></td></tr></table></figure>
+
+<p>作用：显示一个对话框，对话框中包含一条文字信息，用来提示用户输入文字</p>
+</li>
+<li><p>JavaScript 代码执行顺序：<br>按HTML文档流顺序执行JavaScript代码<br>alert() 和 prompt() 它们会跳过页面渲染先被执行</p>
+</li>
+</ol>
+<h5 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h5><p>在计算机科学中，字面量（literal）是在计算机中描述 事&#x2F;物。</p>
+<h3 id="三、变量"><a href="#三、变量" class="headerlink" title="三、变量"></a>三、变量</h3><ol>
+<li><p>概念<br>变量是计算机存储数据的“容器”，它可以让计算机变得有“记忆”。<br>注意：变量不是数据本身，它们仅仅是一个用于存储数值的容器。可以理解为是一个个用来装东西的纸箱子。</p>
+</li>
+<li><p>使用<br>声明变量：<br>要想使用变量，首先需要创建变量（也称为声明变量或者定义变量）</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> 变量名</span><br></pre></td></tr></table></figure>
+
+<p>声明变量有两部分构成：声明关键字、变量名（标识）<br>let 即关键字 (let: 允许、许可、让、要)，所谓关键字是系统提供的专门用来声明（定义）变量的词语</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> age <span class="comment">//age 即变量的名称，也叫标识符</span></span><br></pre></td></tr></table></figure>
+
+<p>变量赋值：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.声明一个age变量</span></span><br><span class="line"><span class="keyword">let</span> age</span><br><span class="line"><span class="comment">//2.age变量赋值18</span></span><br><span class="line">age = <span class="number">18</span></span><br><span class="line"><span class="comment">//3.输出age变量</span></span><br><span class="line"><span class="title function_">alert</span>(age)</span><br></pre></td></tr></table></figure>
+
+<p>注意：是通过变量名来获得变量里面的数据<br>该操作也被称为变量初始化</p>
+<p>更新变量：<br>变量赋值后，还可以通过简单地给它一个不同的值来更新它。</p>
+<p>声明多个变量：<br>变量赋值后，还可以通过简单地给它一个不同的值来更新它。<br>语法：多个变量中间用逗号隔开</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> age = <span class="number">18</span>, nuname = <span class="string">&#x27;pink&#x27;</span><span class="comment">//不推荐，可读性差</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//推荐写法</span></span><br><span class="line"><span class="keyword">let</span> age = <span class="number">18</span></span><br><span class="line"><span class="keyword">let</span> nuame = <span class="string">&#x27;pink&#x27;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>变量本质<br>内存：计算机中存储数据的地方，相当于一个空间。<br>变量本质：是程序在内存中申请的一块用来存放数据的小空间。</p>
+</li>
+<li><p>变量命名规则规范<br>规则：<br>不能用关键字<br>关键字：有特殊含义的字符，JavaScript 内置的一些英语词汇。例如：let、var、if、for等<br>只能用下划线、字母、数字、$组成，且数字不能开头<br>字母严格区分大小写，如 Age 和 age 是不同的变量<br>规范：<br>起名要有意义<br>遵守小驼峰命名法<br>第一个单词首字母小写，后面每个单词首字母大写。例：userName</p>
+</li>
+<li><p>数组<br>参考java</p>
+</li>
+</ol>
+<h3 id="四、常量"><a href="#四、常量" class="headerlink" title="四、常量"></a>四、常量</h3><p>概念：<br>    使用 const 声明的变量称为“常量”。<br>使用场景：<br>    当某个变量永远不会改变的时候，就可以使用 const 来声明，而不是let。<br>命名规范：<br>    和变量一致<br>常量使用：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//声明常量</span></span><br><span class="line">canst G = <span class="number">9.8</span></span><br><span class="line"><span class="comment">//修改</span></span><br><span class="line">G = <span class="number">9.9</span></span><br><span class="line"><span class="comment">//输出这个常量</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(G)</span><br></pre></td></tr></table></figure>
+
+<h3 id="五、数据类型"><a href="#五、数据类型" class="headerlink" title="五、数据类型"></a>五、数据类型</h3><p>JS 数据类型整体分为两大类：</p>
+<p>1.基本数据类型<br>    number 数字型<br>    string字符串型<br>    boolean 布尔型<br>    undefind 未定义型<br>    null 空类型</p>
+<p>2.引用数据类型<br>    object 对象</p>
+<p>其余参考Java……</p>
+<p>检测数据类型：<br>通过 typeof 关键字检测数据类型<br>typeof 运算符可以返回被检测的数据类型。它支持两种语法形式：</p>
+<ol>
+<li>作为运算符： typeof x （常用的写法）</li>
+<li>函数形式： typeof(x)<br> 换言之，有括号和没有括号，得到的结果是一样的，所以我们直接使用运算符的写法</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="keyword">typeof</span> age)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>陈的第一篇博客</title>
+    <url>/2023/12/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<h1 id="你好"><a href="#你好" class="headerlink" title="你好"></a>你好</h1><p>想要来一场酣畅淋漓的排位决斗吗？</p>
+<p>快来！</p>
+<p><a href="https://www.luogu.com.cn/">点击开始</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2023/12/03/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>JavaScript笔记Day02</title>
+    <url>/2024/01/22/JavascrpiptDay02/</url>
+    <content><![CDATA[<h3 id="一、运算符"><a href="#一、运算符" class="headerlink" title="一、运算符"></a>一、运算符</h3><ol>
+<li><p>赋值运算符<br>&#x3D;    +&#x3D;    -&#x3D;    *&#x3D;    &#x2F;&#x3D;    %&#x3D;</p>
+</li>
+<li><p>一元运算符<br>众多的 JavaScript 的运算符可以根据所需表达式的个数，分为一元运算符、二元运算符、三元运算符<br>一元运算符：例：<br>    自增++，自减–。<br>二元运算符：例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">10</span> + <span class="number">20</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>比较运算符<br>参考java</p>
+</li>
+<li><p>逻辑运算符<br>&amp;&amp;    ||    !</p>
+</li>
+<li><p>运算符优先级</p>
+</li>
+</ol>
+<h3 id="二、语句"><a href="#二、语句" class="headerlink" title="二、语句"></a>二、语句</h3><ol>
+<li><p>表达式和语句<br>概念：<br>语句是一段可以执行的代码。<br>比如： prompt() 可以弹出一个输入框，还有 if语句 for 循环语句</p>
+<p>表达式与语句的区别：<br>表达式：<br>因为表达式可被求值，所以它可以写在赋值语句的右侧。<br>表达式 num &#x3D; 3 + 4<br>语句：<br>语句不一定有值，所以比如 alert() for和break 等语句就不能被用于赋值。<br>某些情况，也可以把表达式理解为表达式语句，因为它是在计算结果，但不是必须的成分 (例如continue语句)</p>
+</li>
+<li><p>分支语句<br>有的时候要根据条件选择执行代码，这种就叫分支结构：<br>if分支语句<br>三元运算符<br>switch语句</p>
+</li>
+<li><p>循环语句<br>while循环</p>
+</li>
+</ol>
+<h3 id="三、案例：ATM存取款机"><a href="#三、案例：ATM存取款机" class="headerlink" title="三、案例：ATM存取款机"></a>三、案例：ATM存取款机</h3><p>①：提示输入框写到循环里面（无限循环）</p>
+<p>②：用户输入4则退出循环 break</p>
+<p>③：提前准备一个金额预先存储一个数额 money</p>
+<p>④：根据输入不同的值，做不同的操作</p>
+<p>​     (1)  取钱则是减法操作， 存钱则是加法操作，查看余额则是直接显示金额</p>
+<p>​     (2) 可以使用 if else if 多分支 来执行不同的操作</p>
+<p>完整代码：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="comment">// 1. 开始循环 输入框写到 循环里面</span></span><br><span class="line">  <span class="comment">// 3. 准备一个总的金额</span></span><br><span class="line">  <span class="keyword">let</span> money = <span class="number">100</span></span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> re = +<span class="title function_">prompt</span>(<span class="string">`</span></span><br><span class="line"><span class="string">请您选择操作：</span></span><br><span class="line"><span class="string">1.存钱</span></span><br><span class="line"><span class="string">2.取钱</span></span><br><span class="line"><span class="string">3.查看余额</span></span><br><span class="line"><span class="string">4.退出</span></span><br><span class="line"><span class="string">`</span>)</span><br><span class="line">  <span class="comment">// 2. 如果用户输入的 4 则退出循环， break  写到if 里面，没有写到switch里面， 因为4需要break退出循环</span></span><br><span class="line">  <span class="keyword">if</span> (re === <span class="number">4</span>) &#123;</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 4. 根据输入做操作</span></span><br><span class="line">  <span class="keyword">switch</span> (re) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">      <span class="comment">// 存钱</span></span><br><span class="line">      <span class="keyword">let</span> cun = +<span class="title function_">prompt</span>(<span class="string">&#x27;请输入存款金额&#x27;</span>)</span><br><span class="line">      money = money + cun</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">      <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">      <span class="comment">// 存钱</span></span><br><span class="line">      <span class="keyword">let</span> qu = +<span class="title function_">prompt</span>(<span class="string">&#x27;请输入取款金额&#x27;</span>)</span><br><span class="line">      money = money - qu</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">      <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">      <span class="comment">// 存钱</span></span><br><span class="line">      <span class="title function_">alert</span>(<span class="string">`您的银行卡余额是<span class="subst">$&#123;money&#125;</span>`</span>)</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>CodeWave小组周报</title>
+    <url>/2023/12/17/%E7%BB%84%E5%91%98%E7%9A%84%E5%91%A8%E6%8A%A5/</url>
+    <content><![CDATA[<h2 id="coverHeight-750"><a href="#coverHeight-750" class="headerlink" title="coverHeight: 750"></a>coverHeight: 750</h2><h2 id="2024年-寒假-（01-15-01-21）"><a href="#2024年-寒假-（01-15-01-21）" class="headerlink" title="2024年 寒假 （01.15 - 01.21）"></a>2024年 寒假 （01.15 - 01.21）</h2><table>
+<thead>
+<tr>
+<th>项怀锋</th>
+<th>失联</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>刘士毅</td>
+<td>无</td>
+</tr>
+<tr>
+<td>黄倩</td>
+<td><a href="https://snail0220.github.io/2024/01/21/huang2024-1-15-2024-1-21%E5%AD%A6%E4%B9%A0%E5%91%A8%E6%8A%A5/">https://snail0220.github.io/2024/01/21/huang2024-1-15-2024-1-21%E5%AD%A6%E4%B9%A0%E5%91%A8%E6%8A%A5/</a></td>
+</tr>
+<tr>
+<td>刘浩</td>
+<td>上传失败</td>
+</tr>
+</tbody></table>
+<h2 id="2023年-第17周（12-18-12-24）"><a href="#2023年-第17周（12-18-12-24）" class="headerlink" title="2023年 第17周（12.18 - 12.24）"></a>2023年 第17周（12.18 - 12.24）</h2><table>
+<thead>
+<tr>
+<th>陈涛</th>
+<th><a href="https://mydrowsiness.github.io/2023/12/24/23%E5%8D%81%E4%B8%83%E5%91%A8%E5%91%A8%E6%8A%A5/">周报链接</a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>项怀锋</td>
+<td>暂无</td>
+</tr>
+<tr>
+<td>刘士毅</td>
+<td>暂无</td>
+</tr>
+<tr>
+<td>黄倩</td>
+<td><a href="https://snail0220.github.io/">https://snail0220.github.io/</a></td>
+</tr>
+<tr>
+<td>刘浩</td>
+<td><a href="https://lh-bllog.github.io/">https://lh-bllog.github.io/</a></td>
+</tr>
+</tbody></table>
+<h2 id="2023年-第16周（12-11-12-17）"><a href="#2023年-第16周（12-11-12-17）" class="headerlink" title="2023年 第16周（12.11 - 12.17）"></a>2023年 第16周（12.11 - 12.17）</h2><table>
+<thead>
+<tr>
+<th align="left">陈涛</th>
+<th><a href="https://mydrowsiness.github.io/2023/12/18/23%E5%8D%81%E5%85%AD%E5%91%A8%E5%91%A8%E6%8A%A5/">周报链接</a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">项怀锋</td>
+<td>暂无</td>
+</tr>
+<tr>
+<td align="left">刘士毅</td>
+<td>暂无</td>
+</tr>
+<tr>
+<td align="left">黄倩</td>
+<td><a href="https://snail0220.github.io/">https://snail0220.github.io/</a></td>
+</tr>
+<tr>
+<td align="left">刘浩</td>
+<td><a href="https://lh-bllog.github.io/">https://lh-bllog.github.io/</a></td>
+</tr>
+</tbody></table>
+]]></content>
+  </entry>
+  <entry>
+    <title>周报模板</title>
+    <url>/2023/12/17/%E5%91%A8%E6%8A%A5%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<h2 id="2023年12月11日-2023年12月17日"><a href="#2023年12月11日-2023年12月17日" class="headerlink" title="2023年12月11日-2023年12月17日"></a>2023年12月11日-2023年12月17日</h2><blockquote>
+<p>CodeWave</p>
+</blockquote>
+<h3 id="一个可以删除的提醒："><a href="#一个可以删除的提醒：" class="headerlink" title="一个可以删除的提醒："></a>一个可以删除的提醒：</h3><ol>
+<li>学习大纲的任务项和学习日历对应。</li>
+<li>学习大纲的任务项分为以下两种<ol>
+<li>与代码相关的：xx项目设计[代码，策划],学习java,专业内比赛。</li>
+<li>与代码无关的：期末复习，课堂作业，专业外比赛。</li>
+</ol>
+</li>
+<li>若当天学习内容为空，在第三栏浅浅写一下理由（不做硬性要求）。</li>
+<li>可以自己发挥。</li>
+</ol>
+<h3 id="本周学习大纲"><a href="#本周学习大纲" class="headerlink" title="本周学习大纲"></a>本周学习大纲</h3><ol>
+<li><strong>银行管理系统</strong>：做完银行管理系统。</li>
+<li><strong>JavaSE学习</strong>：学习面向对象高级的static,继承,多态。</li>
+<li><strong>JavaSE复习</strong>：复习面向对象基础的this关键字，构造器，封装，JavaBean。</li>
+</ol>
+<h3 id="本周学习日历"><a href="#本周学习日历" class="headerlink" title="本周学习日历"></a>本周学习日历</h3><table>
+<thead>
+<tr>
+<th>日历</th>
+<th>学习内容</th>
+<th>其他</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>星期一</td>
+<td>银行管理系统&#x2F;JavaSE学习&#x2F;JavaSE复习</td>
+<td></td>
+</tr>
+<tr>
+<td>星期二</td>
+<td>银行管理系统&#x2F;JavaSE学习</td>
+<td></td>
+</tr>
+<tr>
+<td>星期三</td>
+<td>银行管理系统&#x2F;JavaSE学习&#x2F;JavaSE复习</td>
+<td></td>
+</tr>
+<tr>
+<td>星期四</td>
+<td>银行管理系统&#x2F;JavaSE学习</td>
+<td></td>
+</tr>
+<tr>
+<td>星期五</td>
+<td>银行管理系统&#x2F;JavaSE学习</td>
+<td></td>
+</tr>
+<tr>
+<td>星期六</td>
+<td>无</td>
+<td>个人生活</td>
+</tr>
+<tr>
+<td>星期天</td>
+<td>复习期末考试</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="本周学习内容-及-收获"><a href="#本周学习内容-及-收获" class="headerlink" title="本周学习内容 及 收获"></a>本周学习内容 及 收获</h3><h4 id="银行管理系统"><a href="#银行管理系统" class="headerlink" title="银行管理系统"></a>银行管理系统</h4><h5 id="笔记："><a href="#笔记：" class="headerlink" title="笔记："></a>笔记：</h5><p>链接 or 本地</p>
+<h5 id="完成状态："><a href="#完成状态：" class="headerlink" title="完成状态："></a>完成状态：</h5><p>已完成本周任务。</p>
+<h5 id="学习内容："><a href="#学习内容：" class="headerlink" title="学习内容："></a>学习内容：</h5><ol>
+<li>完成了用户登录</li>
+<li>完成了用户转账</li>
+<li>完成了用户取款</li>
+<li>完成了用户销户</li>
+</ol>
+<h5 id="学习收获"><a href="#学习收获" class="headerlink" title="学习收获"></a>学习收获</h5><p>印象比较深的是对非法输入的判断和拦截和随机生成卡号。另外，在做项目中我遇到了一个异常（比如空指针报错），我如何解决了他（自己思考&#x2F;问组长&#x2F;问老师&#x2F;百度搜索），原因是因为我并没有给此变量赋值就调用了它的方法。</p>
+<p>其他两个学习内容同理</p>
+<h3 id="下周学习大纲"><a href="#下周学习大纲" class="headerlink" title="下周学习大纲"></a>下周学习大纲</h3><ol>
+<li><strong>JavaSE复习</strong>：复习面向对象基础的this关键字，构造器，封装，JavaBean。</li>
+<li><strong>复习期末考试</strong>：复习高数&#x2F;线代&#x2F;英语</li>
+</ol>
+]]></content>
+  </entry>
+</search>

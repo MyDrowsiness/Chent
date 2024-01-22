@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="zh"><head>
+<title>JavaScript笔记Day02 - MyDrowsiness个人博客</title>
+<meta charset="UTF-8">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+<link rel="shortcut icon" href="/images/Sprite-pumpkin.png" type="image/png" />
+<meta name="description" content="一、运算符 赋值运算符&#x3D;    +&#x3D;    -&#x3D;    *&#x3D;    &#x2F;&#x3D;    %&#x3D;  一元运算符众多的 JavaScript 的运算符可以根据所需表达式的个数，分为一元运算符、二元运算符、三元运算符一元运算符：例：    自增++，自减–。二元运算符：例： 1let num &#x3D; 10 + 20  比较运算符参考java  逻辑">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript笔记Day02">
+<meta property="og:url" content="http://example.com/2024/01/22/JavascrpiptDay02/index.html">
+<meta property="og:site_name" content="MyDrowsiness个人博客">
+<meta property="og:description" content="一、运算符 赋值运算符&#x3D;    +&#x3D;    -&#x3D;    *&#x3D;    &#x2F;&#x3D;    %&#x3D;  一元运算符众多的 JavaScript 的运算符可以根据所需表达式的个数，分为一元运算符、二元运算符、三元运算符一元运算符：例：    自增++，自减–。二元运算符：例： 1let num &#x3D; 10 + 20  比较运算符参考java  逻辑">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-01-22T13:05:05.119Z">
+<meta property="article:modified_time" content="2024-01-22T13:06:34.462Z">
+<meta property="article:author" content="MyDrowsiness">
+<meta name="twitter:card" content="summary">
+
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1705942316619">
+
+<link rel="stylesheet" href="/css/style.css?v=1705942316619">
+
+
+
+
+    
+        <link rel="stylesheet" href="/custom.css?v=1705942316619">
+    
+
+
+
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+<script src="/lib/lax.min.js" async></script>
+
+
+<script async src="/js/app.js?v=1705942316620"></script>
+
+ 
+
+
+
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+<meta name="generator" content="Hexo 7.0.0"></head><body class="nexmoe mdui-drawer-body-left"><div id="nexmoe-background"><div class="nexmoe-bg" style="background-image: url(https://github.com/MyDrowsiness/MyDrowsiness.github.io/raw/dd3d7d7fc85c7b9a78398ebe4f1f7793d4d3658d/DSC_2376.png)"></div><div class="mdui-appbar mdui-shadow-0"><div class="mdui-toolbar"><a class="mdui-btn mdui-btn-icon mdui-ripple" mdui-drawer="{target: &#039;#drawer&#039;, swipe: true}" title="menu"><i class="mdui-icon nexmoefont icon-menu"></i></a><div class="mdui-toolbar-spacer"></div><a class="mdui-btn mdui-btn-icon" href="/" title="MyDrowsiness"><img src="https://github.com/MyDrowsiness/MyDrowsiness.github.io/raw/dd3d7d7fc85c7b9a78398ebe4f1f7793d4d3658d/58bb7a1ad9ff54de4c7927e485c77f2.jpg" alt="MyDrowsiness"></a></div></div></div><div id="nexmoe-header"><div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="MyDrowsiness">
+            <img src="https://github.com/MyDrowsiness/MyDrowsiness.github.io/raw/dd3d7d7fc85c7b9a78398ebe4f1f7793d4d3658d/58bb7a1ad9ff54de4c7927e485c77f2.jpg" alt="MyDrowsiness" alt="MyDrowsiness">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>13</div>
+        <div><span>标签</span>0</div>
+        <div><span>分类</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" target="_blank" rel="noopener" href="https://starlike-daydream.github.io/Cesteo.github.io/" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" target="_blank" rel="noopener" href="https://mydrowsiness.github.io/2023/12/17/%E7%BB%84%E5%91%98%E7%9A%84%E5%91%A8%E6%8A%A5/" title="关于周报">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于周报
+            </div>
+        </a>
+        
+    </div>
+    
+    
+        
+        <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+         
+            <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+                <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+            </form>
+         
+    </div>
+</div>
+
+
+
+
+    
+        
+        <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="https://bilibili.com/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://github.com/MyDrowsiness/"
+			target="_blank"
+			mdui-tooltip="{content: 'GitHub'}"
+			style="
+				color: rgb(25, 23, 23);
+				background-color: rgba(25, 23, 23, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-github"
+			></i> </a
+		>
+	</div>
+</div>
+
+    
+        
+        
+
+    
+        
+        
+    
+        
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">10</span></li></ul>
+    </div>
+  </div>
+
+
+
+    
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">最新文章</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/01/22/24%E5%AF%92%E5%81%87%E5%91%A8%E6%8A%A501/">24寒假周报01</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/22/JavascrpiptDay02/">JavaScript笔记Day02</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/22/JavaScriptDay01/">JavaScript笔记Day01</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/24/23%E5%8D%81%E4%B8%83%E5%91%A8%E5%91%A8%E6%8A%A5/">23十七周周报</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/24/2023-12-24-WebDay04/">Web笔记Day04</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+   
+    <div class="nexmoe-copyright">
+        &copy; 2024 MyDrowsiness
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer --></div><div id="nexmoe-content"><div class="nexmoe-primary"><div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover absolute" style="padding-top: 62.5%;"> 
+            <img src="/images/DSC_2376.png" alt="JavaScript笔记Day02" loading="lazy">
+            <h1>JavaScript笔记Day02</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2024年01月22日</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h3 id="一、运算符"><a href="#一、运算符" class="headerlink" title="一、运算符"></a>一、运算符</h3><ol>
+<li><p>赋值运算符<br>&#x3D;    +&#x3D;    -&#x3D;    *&#x3D;    &#x2F;&#x3D;    %&#x3D;</p>
+</li>
+<li><p>一元运算符<br>众多的 JavaScript 的运算符可以根据所需表达式的个数，分为一元运算符、二元运算符、三元运算符<br>一元运算符：例：<br>    自增++，自减–。<br>二元运算符：例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> num = <span class="number">10</span> + <span class="number">20</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>比较运算符<br>参考java</p>
+</li>
+<li><p>逻辑运算符<br>&amp;&amp;    ||    !</p>
+</li>
+<li><p>运算符优先级</p>
+</li>
+</ol>
+<h3 id="二、语句"><a href="#二、语句" class="headerlink" title="二、语句"></a>二、语句</h3><ol>
+<li><p>表达式和语句<br>概念：<br>语句是一段可以执行的代码。<br>比如： prompt() 可以弹出一个输入框，还有 if语句 for 循环语句</p>
+<p>表达式与语句的区别：<br>表达式：<br>因为表达式可被求值，所以它可以写在赋值语句的右侧。<br>表达式 num &#x3D; 3 + 4<br>语句：<br>语句不一定有值，所以比如 alert() for和break 等语句就不能被用于赋值。<br>某些情况，也可以把表达式理解为表达式语句，因为它是在计算结果，但不是必须的成分 (例如continue语句)</p>
+</li>
+<li><p>分支语句<br>有的时候要根据条件选择执行代码，这种就叫分支结构：<br>if分支语句<br>三元运算符<br>switch语句</p>
+</li>
+<li><p>循环语句<br>while循环</p>
+</li>
+</ol>
+<h3 id="三、案例：ATM存取款机"><a href="#三、案例：ATM存取款机" class="headerlink" title="三、案例：ATM存取款机"></a>三、案例：ATM存取款机</h3><p>①：提示输入框写到循环里面（无限循环）</p>
+<p>②：用户输入4则退出循环 break</p>
+<p>③：提前准备一个金额预先存储一个数额 money</p>
+<p>④：根据输入不同的值，做不同的操作</p>
+<p>​     (1)  取钱则是减法操作， 存钱则是加法操作，查看余额则是直接显示金额</p>
+<p>​     (2) 可以使用 if else if 多分支 来执行不同的操作</p>
+<p>完整代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="comment">// 1. 开始循环 输入框写到 循环里面</span></span><br><span class="line">  <span class="comment">// 3. 准备一个总的金额</span></span><br><span class="line">  <span class="keyword">let</span> money = <span class="number">100</span></span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> re = +<span class="title function_">prompt</span>(<span class="string">`</span></span><br><span class="line"><span class="string">请您选择操作：</span></span><br><span class="line"><span class="string">1.存钱</span></span><br><span class="line"><span class="string">2.取钱</span></span><br><span class="line"><span class="string">3.查看余额</span></span><br><span class="line"><span class="string">4.退出</span></span><br><span class="line"><span class="string">`</span>)</span><br><span class="line">  <span class="comment">// 2. 如果用户输入的 4 则退出循环， break  写到if 里面，没有写到switch里面， 因为4需要break退出循环</span></span><br><span class="line">  <span class="keyword">if</span> (re === <span class="number">4</span>) &#123;</span><br><span class="line">    <span class="keyword">break</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 4. 根据输入做操作</span></span><br><span class="line">  <span class="keyword">switch</span> (re) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">      <span class="comment">// 存钱</span></span><br><span class="line">      <span class="keyword">let</span> cun = +<span class="title function_">prompt</span>(<span class="string">&#x27;请输入存款金额&#x27;</span>)</span><br><span class="line">      money = money + cun</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">      <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">      <span class="comment">// 存钱</span></span><br><span class="line">      <span class="keyword">let</span> qu = +<span class="title function_">prompt</span>(<span class="string">&#x27;请输入取款金额&#x27;</span>)</span><br><span class="line">      money = money - qu</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">      <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">      <span class="comment">// 存钱</span></span><br><span class="line">      <span class="title function_">alert</span>(<span class="string">`您的银行卡余额是<span class="subst">$&#123;money&#125;</span>`</span>)</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+</div>
+  
+  
+    <script async src="/js/copy-codeblock.js?v=1705942316598"></script>
+  
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div></div><div class="nexmoe-post-right">    <div class="nexmoe-fixed">
+        <div class="nexmoe-tool">
+
+            
+
+            
+            
+            <button class="mdui-fab catalog" style="overflow:unset;">
+                <i class="nexmoefont icon-i-catalog"></i>
+                <div class="nexmoe-toc">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.</span> <span class="toc-text">一、运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%AF%AD%E5%8F%A5"><span class="toc-number">2.</span> <span class="toc-text">二、语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%A1%88%E4%BE%8B%EF%BC%9AATM%E5%AD%98%E5%8F%96%E6%AC%BE%E6%9C%BA"><span class="toc-number">3.</span> <span class="toc-text">三、案例：ATM存取款机</span></a></li></ol>
+                </div>
+            </button>
+            
+
+            
+
+            <a href="#nexmoe-content" class="backtop toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+        </div>
+    </div>
+</div></div><div id="nexmoe-footer"><!--!--></div><div id="nexmoe-search-space"><div class="search-container"><div class="search-header"><div class="search-input-container"><input class="search-input" type="text" placeholder="搜索" onInput="sinput();"></div><a class="search-close" onclick="sclose();">×</a></div><div class="search-body"></div></div></div><div></div></body></html>

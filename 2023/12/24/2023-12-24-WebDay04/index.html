@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="zh"><head>
+<title>Web笔记Day04 - MyDrowsiness个人博客</title>
+<meta charset="UTF-8">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+<link rel="shortcut icon" href="/images/Sprite-pumpkin.png" type="image/png" />
+<meta name="description" content="一、响应式网页解决方式 媒体查询 12345@media (媒体特性)&#123;    选择器&#123;        样式;    &#125;&#125;  Bootstrap“简介、直观、强悍的前端开发框架，让web开发更迅速、简单”   1. 媒体查询媒体特性max-width: 最大宽度min-width: 最小宽度 1234567891011121314&lt;style&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Web笔记Day04">
+<meta property="og:url" content="http://example.com/2023/12/24/2023-12-24-WebDay04/index.html">
+<meta property="og:site_name" content="MyDrowsiness个人博客">
+<meta property="og:description" content="一、响应式网页解决方式 媒体查询 12345@media (媒体特性)&#123;    选择器&#123;        样式;    &#125;&#125;  Bootstrap“简介、直观、强悍的前端开发框架，让web开发更迅速、简单”   1. 媒体查询媒体特性max-width: 最大宽度min-width: 最小宽度 1234567891011121314&lt;style&gt;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-24T11:58:37.728Z">
+<meta property="article:modified_time" content="2023-12-24T14:21:57.493Z">
+<meta property="article:author" content="MyDrowsiness">
+<meta name="twitter:card" content="summary">
+
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1705942316631">
+
+<link rel="stylesheet" href="/css/style.css?v=1705942316631">
+
+
+
+
+    
+        <link rel="stylesheet" href="/custom.css?v=1705942316631">
+    
+
+
+
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+<script src="/lib/lax.min.js" async></script>
+
+
+<script async src="/js/app.js?v=1705942316631"></script>
+
+ 
+
+
+
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+<meta name="generator" content="Hexo 7.0.0"></head><body class="nexmoe mdui-drawer-body-left"><div id="nexmoe-background"><div class="nexmoe-bg" style="background-image: url(https://github.com/MyDrowsiness/MyDrowsiness.github.io/raw/dd3d7d7fc85c7b9a78398ebe4f1f7793d4d3658d/DSC_2376.png)"></div><div class="mdui-appbar mdui-shadow-0"><div class="mdui-toolbar"><a class="mdui-btn mdui-btn-icon mdui-ripple" mdui-drawer="{target: &#039;#drawer&#039;, swipe: true}" title="menu"><i class="mdui-icon nexmoefont icon-menu"></i></a><div class="mdui-toolbar-spacer"></div><a class="mdui-btn mdui-btn-icon" href="/" title="MyDrowsiness"><img src="https://github.com/MyDrowsiness/MyDrowsiness.github.io/raw/dd3d7d7fc85c7b9a78398ebe4f1f7793d4d3658d/58bb7a1ad9ff54de4c7927e485c77f2.jpg" alt="MyDrowsiness"></a></div></div></div><div id="nexmoe-header"><div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="MyDrowsiness">
+            <img src="https://github.com/MyDrowsiness/MyDrowsiness.github.io/raw/dd3d7d7fc85c7b9a78398ebe4f1f7793d4d3658d/58bb7a1ad9ff54de4c7927e485c77f2.jpg" alt="MyDrowsiness" alt="MyDrowsiness">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>13</div>
+        <div><span>标签</span>0</div>
+        <div><span>分类</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" target="_blank" rel="noopener" href="https://starlike-daydream.github.io/Cesteo.github.io/" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" target="_blank" rel="noopener" href="https://mydrowsiness.github.io/2023/12/17/%E7%BB%84%E5%91%98%E7%9A%84%E5%91%A8%E6%8A%A5/" title="关于周报">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于周报
+            </div>
+        </a>
+        
+    </div>
+    
+    
+        
+        <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+         
+            <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+                <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+            </form>
+         
+    </div>
+</div>
+
+
+
+
+    
+        
+        <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="https://bilibili.com/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://github.com/MyDrowsiness/"
+			target="_blank"
+			mdui-tooltip="{content: 'GitHub'}"
+			style="
+				color: rgb(25, 23, 23);
+				background-color: rgba(25, 23, 23, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-github"
+			></i> </a
+		>
+	</div>
+</div>
+
+    
+        
+        
+
+    
+        
+        
+    
+        
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">10</span></li></ul>
+    </div>
+  </div>
+
+
+
+    
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">最新文章</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/01/22/24%E5%AF%92%E5%81%87%E5%91%A8%E6%8A%A501/">24寒假周报01</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/22/JavascrpiptDay02/">JavaScript笔记Day02</a>
+          </li>
+        
+          <li>
+            <a href="/2024/01/22/JavaScriptDay01/">JavaScript笔记Day01</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/24/23%E5%8D%81%E4%B8%83%E5%91%A8%E5%91%A8%E6%8A%A5/">23十七周周报</a>
+          </li>
+        
+          <li>
+            <a href="/2023/12/24/2023-12-24-WebDay04/">Web笔记Day04</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+   
+    <div class="nexmoe-copyright">
+        &copy; 2024 MyDrowsiness
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer --></div><div id="nexmoe-content"><div class="nexmoe-primary"><div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover absolute" style="padding-top: 62.5%;"> 
+            <img src="/images/DSC_2376.png" alt="Web笔记Day04" loading="lazy">
+            <h1>Web笔记Day04</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2023年12月24日</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <h1 id="一、响应式网页"><a href="#一、响应式网页" class="headerlink" title="一、响应式网页"></a>一、响应式网页</h1><h4 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a>解决方式</h4><ol>
+<li><p>媒体查询</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> (媒体特性)&#123;</span><br><span class="line">    选择器&#123;</span><br><span class="line">        样式;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Bootstrap<br>“简介、直观、强悍的前端开发框架，让web开发更迅速、简单”</p>
+</li>
+</ol>
+<h2 id="1-媒体查询"><a href="#1-媒体查询" class="headerlink" title="1. 媒体查询"></a>1. 媒体查询</h2><h4 id="媒体特性"><a href="#媒体特性" class="headerlink" title="媒体特性"></a>媒体特性</h4><p>max-width: 最大宽度<br>min-width: 最小宽度</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 屏幕宽度小于等于768，网页背景色是粉色--&gt;max-width */</span></span></span><br><span class="line"><span class="language-css">    <span class="keyword">@media</span> (<span class="attribute">max-width</span>: <span class="number">768px</span>)&#123;</span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">body</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: pink;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="comment">/* 屏幕宽度大于等于1200，网页背景色是绿色--&gt;min-width */</span></span></span><br><span class="line"><span class="language-css">    <span class="keyword">@media</span> (<span class="attribute">min-width</span>: <span class="number">1200px</span>)&#123;</span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">body</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">background-color</span>: green;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="书写顺序"><a href="#书写顺序" class="headerlink" title="书写顺序"></a>书写顺序</h4><p>需求：<br>    默认网页背景色是灰色<br>    屏幕宽度大于等于768px，网页背景色是粉色<br>    屏幕宽度大于等于992px，网页背景色是绿色<br>    屏幕宽度大于等于1200px，网页背景色是skyblue<br>提示<br>    min-width(从小到大)<br>    max-width(从大到小)<br>    ●  一定要按顺序写，否则效果会被层叠消失。</p>
+<h4 id="案例：左侧隐藏"><a href="#案例：左侧隐藏" class="headerlink" title="案例：左侧隐藏"></a>案例：左侧隐藏</h4><p>需求：网页宽度小于等于768px则隐藏左侧区域。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">    *&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">margin</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">padding</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.box</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.left</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>: <span class="number">500px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">background-color</span>: pink;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="selector-class">.main</span>&#123;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">flex</span>: <span class="number">1</span>; <span class="comment">/*占用剩余父级尺寸，否则因文字导致left挤压偏小 */</span></span></span><br><span class="line"><span class="language-css">        <span class="attribute">height</span>: <span class="number">500px</span>;</span></span><br><span class="line"><span class="language-css">        <span class="attribute">background-color</span>: skyblue;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css">    <span class="keyword">@media</span> (<span class="attribute">max-width</span>:<span class="number">768px</span>)&#123;</span></span><br><span class="line"><span class="language-css">        <span class="selector-class">.left</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">display</span>: none;<span class="comment">/*左侧消失*/</span></span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    &#125;</span></span><br><span class="line"><span class="language-css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="完整写法"><a href="#完整写法" class="headerlink" title="完整写法"></a>完整写法</h4><p>了解：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> 关键词 媒体类型 <span class="keyword">and</span> (媒体特性) &#123;css代码&#125;</span><br></pre></td></tr></table></figure>
+
+<p>关键词 &#x2F; 逻辑操作符<br>    and<br>    only<br>    not</p>
+<p><strong>媒体类型</strong>是用来区分设备类型的，如屏幕设备、打印设备等，其中手机、电脑、平板都属于屏幕设备。</p>
+<table>
+<thead>
+<tr>
+<th>类型名称</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>屏幕</td>
+<td>screen</td>
+<td>带屏幕的设备</td>
+</tr>
+<tr>
+<td>打印预览</td>
+<td>print</td>
+<td>打印预览模式</td>
+</tr>
+<tr>
+<td>阅读器</td>
+<td>speech</td>
+<td>屏幕阅读模式</td>
+</tr>
+<tr>
+<td>不区分类型</td>
+<td>all</td>
+<td>默认值，包括以上3种情形</td>
+</tr>
+</tbody></table>
+<p> <strong>媒体特性</strong>主要用来描述媒体类型的具体特征，如当前屏幕的狂爱、分辨率、横屏或竖屏等。</p>
+<table>
+<thead>
+<tr>
+<th>特性名称</th>
+<th>属性</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>视口的宽和高</td>
+<td>width、heigth</td>
+<td>数值</td>
+</tr>
+<tr>
+<td>视口最大宽和高</td>
+<td>max-width、max-heigth</td>
+<td>数值</td>
+</tr>
+<tr>
+<td>视口最小宽和高</td>
+<td>min-width、min-heigth</td>
+<td>数值</td>
+</tr>
+<tr>
+<td>屏幕方向</td>
+<td>orientation</td>
+<td>portrait:竖屏<br />landscape:横屏</td>
+</tr>
+</tbody></table>
+<p>思考：<br>    当@media内css样式太多，代码复杂混乱，该如何解决？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@media (媒体特性)&#123;</span><br><span class="line">    选择器&#123;</span><br><span class="line">        ......</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>解决：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">media</span>=<span class="string">&quot;逻辑符 媒体类型 and (媒体特性)&quot;</span> <span class="attr">href</span>=<span class="string">&quot;xx.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>案例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 视口宽度小于等于768px，网页背景色是粉色 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">media</span>=<span class="string">&quot;(max=width: 768px)&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./pink.css&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 视口宽度小于等于768px，网页背景色是粉色 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">media</span>=<span class="string">&quot;(min=width: 1200px)&quot;</span> <span class="attr">href</span>=<span class="string">&quot;./green.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-Bootstrap"><a href="#2-Bootstrap" class="headerlink" title="2. Bootstrap"></a>2. Bootstrap</h2><h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>Bootstrap是推特Twitter公司开发维护的前端UI框架，它提供了大量编写好的CSS样式，允许开发者结合一定HTML结构及JavaScript，快速编写功能完善的网页及常见交互效果。</p>
+<p>中文官网：<a target="_blank" rel="noopener" href="https://www.bootcss.com/">https://www.bootcss.com</a></p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><ol>
+<li><p>下载：<br>下载Bootstrap V5中文文档–&gt;进入中文文档–&gt;下载 Bootstrap 生产文件<br>（bootsrtap.css为正常书写格式；bootstrap.min.css写在一行占空间小。单纯使用框架建议使用bootstrap.min.css）</p>
+</li>
+<li><p>使用：<br>引入Bootstrap CSS文件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;../BootStrap/css/bootstrap.min.css&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>调用类名：container: 响应式布局版心类</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span>测试<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="栅格系统"><a href="#栅格系统" class="headerlink" title="栅格系统"></a>栅格系统</h4><p>栅格化是指将整个网页的宽度分成12等份，每个盒子占用对应的份数。<br>例如：一行排4个盒子，则每个盒子占3份即可（12&#x2F;4&#x3D;3）</p>
+<table>
+<thead>
+<tr>
+<th>Breakpoint断点</th>
+<th>Class infix分类中缀</th>
+<th>Dimensions尺寸</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Extra small</td>
+<td>None</td>
+<td>&lt;576px</td>
+</tr>
+<tr>
+<td>Small</td>
+<td>sm</td>
+<td>≥576px</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>md</td>
+<td>≥768px</td>
+</tr>
+<tr>
+<td>Large</td>
+<td>lg</td>
+<td>≥992px</td>
+</tr>
+<tr>
+<td>Extra large</td>
+<td>xl</td>
+<td>≥1200px</td>
+</tr>
+<tr>
+<td>Extra extra large</td>
+<td>xxl</td>
+<td>≥1400px</td>
+</tr>
+</tbody></table>
+<p>响应区间：</p>
+<table>
+<thead>
+<tr>
+<th><br /></th>
+<th>xs<br />&lt;576px</th>
+<th>sm<br />≥576px</th>
+<th>md<br />≥768px</th>
+<th>lg<br />≥992px</th>
+<th>xl<br />≥1200px</th>
+<th>xxl<br />≥1400px</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Container</td>
+<td>None(auto)</td>
+<td>540px</td>
+<td>720px</td>
+<td>960px</td>
+<td>1140px</td>
+<td>1320px</td>
+</tr>
+<tr>
+<td>Class prefix前缀</td>
+<td>.col-</td>
+<td>.col-sm-</td>
+<td>.col-md-</td>
+<td>.col-lg-</td>
+<td>.col-</td>
+<td>.col-xxl-</td>
+</tr>
+</tbody></table>
+<p>常用布局类：<br>▢  col-*- ：列（例如Lcol-xxl-3）<br>▢  row ：行</p>
+<p>代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- </span></span><br><span class="line"><span class="comment">        视口宽度大于等于1200px,一行排4个盒子 -&gt;3</span></span><br><span class="line"><span class="comment">        视口宽度大于等于768px,一行排2个盒子 -&gt;6</span></span><br><span class="line"><span class="comment">        视口宽度大于等于576px,一行排1个盒子 -&gt;12</span></span><br><span class="line"><span class="comment">     --&gt;</span></span><br><span class="line">     <span class="comment">&lt;!-- 版心 -&gt; row -&gt; 子级 --&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-xl-3 col-md-6 col-sm-12&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-xl-3 col-md-6 col-sm-12&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-xl-3 col-md-6 col-sm-12&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-xl-3 col-md-6 col-sm-12&quot;</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>*显示调用类名的插件：IntelliSence for CSS class names in HTML</p>
+<h4 id="全局样式"><a href="#全局样式" class="headerlink" title="全局样式"></a>全局样式</h4><p>Button类<br>    ▢  btn：默认样式<br>    ▢  btn-success：成功<br>    ▢  btn-warning：警告<br>    ▢  ……<br>    ▢  按钮尺寸：btn-lg &#x2F; btn-sm</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-success btn-sm&quot;</span>&gt;</span>小绿色按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn btn-warning btn-lg&quot;</span>&gt;</span>大黄色按钮<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>表格类<br>    ▢  table：默认样式<br>    ▢  table-striped：隔行变色<br>    ▢  table-success：表格颜色(绿)<br>    ▢  ……</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">&quot;table table-striped&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span> <span class="attr">class</span>=<span class="string">&quot;table-success&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>年龄<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>性别<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>张三<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>18<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>男<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="组件-Components"><a href="#组件-Components" class="headerlink" title="组件(Components)"></a>组件(Components)</h4><ol>
+<li>引入样式表</li>
+<li>引入js文件</li>
+<li>复制结构，修改内容</li>
+</ol>
+<p>例如导航、轮播图等，在官网copy代码即可，需要自定义可以配合网页检查，寻找需要修改的元素。当想要覆盖Bootstrap样式需要在末尾添加 !important;</p>
+<h4 id="字体图标"><a href="#字体图标" class="headerlink" title="字体图标"></a>字体图标</h4><p>下载：<br>    导航&#x2F;Extend：图标库–&gt;安装–&gt;下载安装包–&gt;bootstarp-icons-1.X.X.zip</p>
+<p>使用：</p>
+<pre><code> 1. 复制font文件夹到项目目录
+ 2. 网页引入bootstrap-icon.css文件
+ 3. 调用CSS类名（图标对应的类名）
+</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;../BootStrap/font/bootstrap-icons.css&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="comment">/* 美化字体图标 */</span></span></span><br><span class="line"><span class="language-css">        <span class="selector-class">.bi-android2</span>&#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">font-size</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">color</span>: green;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 安卓图标 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;bi-android2&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h4><p>腾讯全端：略</p>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+</div>
+  
+  
+    <script async src="/js/copy-codeblock.js?v=1705942316599"></script>
+  
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div></div><div class="nexmoe-post-right">    <div class="nexmoe-fixed">
+        <div class="nexmoe-tool">
+
+            
+
+            
+            
+            <button class="mdui-fab catalog" style="overflow:unset;">
+                <i class="nexmoefont icon-i-catalog"></i>
+                <div class="nexmoe-toc">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%93%8D%E5%BA%94%E5%BC%8F%E7%BD%91%E9%A1%B5"><span class="toc-number">1.</span> <span class="toc-text">一、响应式网页</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">解决方式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2"><span class="toc-number">1.1.</span> <span class="toc-text">1. 媒体查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AA%92%E4%BD%93%E7%89%B9%E6%80%A7"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">媒体特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B9%A6%E5%86%99%E9%A1%BA%E5%BA%8F"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">书写顺序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B%EF%BC%9A%E5%B7%A6%E4%BE%A7%E9%9A%90%E8%97%8F"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">案例：左侧隐藏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%8C%E6%95%B4%E5%86%99%E6%B3%95"><span class="toc-number">1.1.0.4.</span> <span class="toc-text">完整写法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Bootstrap"><span class="toc-number">1.2.</span> <span class="toc-text">2. Bootstrap</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%85%E6%A0%BC%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">栅格系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E6%A0%B7%E5%BC%8F"><span class="toc-number">1.2.0.4.</span> <span class="toc-text">全局样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%84%E4%BB%B6-Components"><span class="toc-number">1.2.0.5.</span> <span class="toc-text">组件(Components)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E4%BD%93%E5%9B%BE%E6%A0%87"><span class="toc-number">1.2.0.6.</span> <span class="toc-text">字体图标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B"><span class="toc-number">1.2.0.7.</span> <span class="toc-text">案例</span></a></li></ol></li></ol></li></ol></li></ol>
+                </div>
+            </button>
+            
+
+            
+
+            <a href="#nexmoe-content" class="backtop toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+        </div>
+    </div>
+</div></div><div id="nexmoe-footer"><!--!--></div><div id="nexmoe-search-space"><div class="search-container"><div class="search-header"><div class="search-input-container"><input class="search-input" type="text" placeholder="搜索" onInput="sinput();"></div><a class="search-close" onclick="sclose();">×</a></div><div class="search-body"></div></div></div><div></div></body></html>
