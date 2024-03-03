@@ -891,7 +891,7 @@ C==&gt;E(Bom)
   <entry>
     <title>周报模板</title>
     <url>/2023/12/17/%E5%91%A8%E6%8A%A5%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<h2 id="2023年12月11日-2023年12月17日"><a href="#2023年12月11日-2023年12月17日" class="headerlink" title="2023年12月11日-2023年12月17日"></a>2023年12月11日-2023年12月17日</h2><blockquote>
+    <content><![CDATA[<h2 id="2024年2月26日-2024年3月3日"><a href="#2024年2月26日-2024年3月3日" class="headerlink" title="2024年2月26日-2024年3月3日"></a>2024年2月26日-2024年3月3日</h2><blockquote>
 <p>CodeWave</p>
 </blockquote>
 <h3 id="一个可以删除的提醒："><a href="#一个可以删除的提醒：" class="headerlink" title="一个可以删除的提醒："></a>一个可以删除的提醒：</h3><ol>
@@ -966,6 +966,74 @@ C==&gt;E(Bom)
 <h3 id="下周学习大纲"><a href="#下周学习大纲" class="headerlink" title="下周学习大纲"></a>下周学习大纲</h3><ol>
 <li><strong>JavaSE复习</strong>：复习面向对象基础的this关键字，构造器，封装，JavaBean。</li>
 <li><strong>复习期末考试</strong>：复习高数&#x2F;线代&#x2F;英语</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>24第一周周报</title>
+    <url>/2024/03/03/24%E7%AC%AC%E4%B8%80%E5%91%A8%E5%91%A8%E6%8A%A5/</url>
+    <content><![CDATA[<h2 id="2024年2月26日-2024年3月3日"><a href="#2024年2月26日-2024年3月3日" class="headerlink" title="2024年2月26日-2024年3月3日"></a>2024年2月26日-2024年3月3日</h2><blockquote>
+<p>CodeWave</p>
+</blockquote>
+<h3 id="本周学习大纲"><a href="#本周学习大纲" class="headerlink" title="本周学习大纲"></a>本周学习大纲</h3><ol>
+<li><strong>准备比赛项目</strong>：制作前端项目; 学习spark。</li>
+<li><strong>java二级知识学习</strong>：学习java知识，刷题。</li>
+</ol>
+<h3 id="本周学习日历"><a href="#本周学习日历" class="headerlink" title="本周学习日历"></a>本周学习日历</h3><table>
+<thead>
+<tr>
+<th>日历</th>
+<th>学习内容</th>
+<th>其他</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>星期一</td>
+<td></td>
+<td>个人生活</td>
+</tr>
+<tr>
+<td>星期二</td>
+<td>学习spark</td>
+<td></td>
+</tr>
+<tr>
+<td>星期三</td>
+<td>学习spark</td>
+<td></td>
+</tr>
+<tr>
+<td>星期四</td>
+<td>制作前端项目</td>
+<td></td>
+</tr>
+<tr>
+<td>星期五</td>
+<td>制作前端项目</td>
+<td></td>
+</tr>
+<tr>
+<td>星期六</td>
+<td>制作前端项目</td>
+<td></td>
+</tr>
+<tr>
+<td>星期天</td>
+<td>制作前端项目&#x2F;刷题</td>
+<td>个人生活</td>
+</tr>
+</tbody></table>
+<h3 id="本周学习内容-及-收获"><a href="#本周学习内容-及-收获" class="headerlink" title="本周学习内容 及 收获"></a>本周学习内容 及 收获</h3><h4 id="银行管理系统"><a href="#银行管理系统" class="headerlink" title="银行管理系统"></a>银行管理系统</h4><h5 id="笔记："><a href="#笔记：" class="headerlink" title="笔记："></a>笔记：</h5><p>无</p>
+<h5 id="完成状态："><a href="#完成状态：" class="headerlink" title="完成状态："></a>完成状态：</h5><p>未完成本周任务。</p>
+<h5 id="学习内容："><a href="#学习内容：" class="headerlink" title="学习内容："></a>学习内容：</h5><ol>
+<li>学习了spark的软件栈、运行架、部署模式、基本操作以及spark的部署。</li>
+<li>制作项目加固了对知识的了解与应用能力</li>
+</ol>
+<h5 id="学习收获"><a href="#学习收获" class="headerlink" title="学习收获"></a>学习收获</h5><p>对bootstrap的运用更加熟悉。<br>新学了spark相关的知识，对于以后的相关学习打下了基础。</p>
+<h3 id="下周学习大纲"><a href="#下周学习大纲" class="headerlink" title="下周学习大纲"></a>下周学习大纲</h3><ol>
+<li><strong>继续前端项目</strong>：完善基本功能。</li>
+<li><strong>准备计算机二级考试</strong>：刷题</li>
+<li><strong>学习spark</strong>：争取参加比赛获奖。</li>
 </ol>
 ]]></content>
   </entry>
