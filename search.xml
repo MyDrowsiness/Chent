@@ -818,23 +818,63 @@ C==&gt;E(Bom)
   <entry>
     <title>CodeWave小组周报</title>
     <url>/2023/12/17/%E7%BB%84%E5%91%98%E7%9A%84%E5%91%A8%E6%8A%A5/</url>
-    <content><![CDATA[<h2 id="coverHeight-750"><a href="#coverHeight-750" class="headerlink" title="coverHeight: 750"></a>coverHeight: 750</h2><h2 id="2024年-寒假-（01-15-01-21）"><a href="#2024年-寒假-（01-15-01-21）" class="headerlink" title="2024年 寒假 （01.15 - 01.21）"></a>2024年 寒假 （01.15 - 01.21）</h2><table>
+    <content><![CDATA[<h2 id="coverHeight-750"><a href="#coverHeight-750" class="headerlink" title="coverHeight: 750"></a>coverHeight: 750</h2><h2 id="2024年-第2周（3-4-3-10）"><a href="#2024年-第2周（3-4-3-10）" class="headerlink" title="2024年 第2周（3.4 - 3.10）"></a>2024年 第2周（3.4 - 3.10）</h2><table>
 <thead>
 <tr>
-<th>项怀锋</th>
+<th>陈涛</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>项怀锋</td>
+<td>暂无</td>
+</tr>
+<tr>
+<td>黄倩</td>
+<td><a href="https://snail0220.github.io/2024/03/10/huang2024-3-4-2024-3-10%E5%91%A8%E6%8A%A5/">https://snail0220.github.io/2024/03/10/huang2024-3-4-2024-3-10%E5%91%A8%E6%8A%A5/</a></td>
+</tr>
+<tr>
+<td>刘浩</td>
+<td><a href="https://lh-bllog.github.io/">https://lh-bllog.github.io/</a></td>
+</tr>
+</tbody></table>
+<h2 id="2024年-第1周（12-27-3-3）"><a href="#2024年-第1周（12-27-3-3）" class="headerlink" title="2024年 第1周（12.27 - 3.3）"></a>2024年 第1周（12.27 - 3.3）</h2><table>
+<thead>
+<tr>
+<th>陈涛</th>
+<th><a href="https://mydrowsiness.github.io/2024/03/03/24%E7%AC%AC%E4%B8%80%E5%91%A8%E5%91%A8%E6%8A%A5/">周报链接</a></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>项怀锋</td>
+<td>暂无</td>
+</tr>
+<tr>
+<td>黄倩</td>
+<td><a href="https://snail0220.github.io/2024/03/03/huang2024-2-26-2024-3-3%E5%91%A8%E6%8A%A5/">https://snail0220.github.io/2024/03/03/huang2024-2-26-2024-3-3%E5%91%A8%E6%8A%A5/</a></td>
+</tr>
+<tr>
+<td>刘浩</td>
+<td><a href="https://lh-bllog.github.io/">https://lh-bllog.github.io/</a></td>
+</tr>
+</tbody></table>
+<h2 id="2024年-寒假-（01-15-01-21）"><a href="#2024年-寒假-（01-15-01-21）" class="headerlink" title="2024年 寒假 （01.15 - 01.21）"></a>2024年 寒假 （01.15 - 01.21）</h2><table>
+<thead>
+<tr>
+<th align="left">项怀锋</th>
 <th>失联</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>刘士毅</td>
+<td align="left">刘士毅</td>
 <td>无</td>
 </tr>
 <tr>
-<td>黄倩</td>
+<td align="left">黄倩</td>
 <td><a href="https://snail0220.github.io/2024/01/21/huang2024-1-15-2024-1-21%E5%AD%A6%E4%B9%A0%E5%91%A8%E6%8A%A5/">https://snail0220.github.io/2024/01/21/huang2024-1-15-2024-1-21%E5%AD%A6%E4%B9%A0%E5%91%A8%E6%8A%A5/</a></td>
 </tr>
 <tr>
-<td>刘浩</td>
+<td align="left">刘浩</td>
 <td>上传失败</td>
 </tr>
 </tbody></table>
@@ -1034,6 +1074,78 @@ C==&gt;E(Bom)
 <li><strong>继续前端项目</strong>：完善基本功能。</li>
 <li><strong>准备计算机二级考试</strong>：刷题</li>
 <li><strong>学习spark</strong>：争取参加比赛获奖。</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>周报模板</title>
+    <url>/2024/03/10/24%E7%AC%AC%E4%BA%8C%E5%91%A8%E5%91%A8%E6%8A%A5/</url>
+    <content><![CDATA[<h2 id="2024年3月4日-2024年3月10日"><a href="#2024年3月4日-2024年3月10日" class="headerlink" title="2024年3月4日-2024年3月10日"></a>2024年3月4日-2024年3月10日</h2><blockquote>
+<p>CodeWave</p>
+</blockquote>
+<h3 id="本周学习大纲"><a href="#本周学习大纲" class="headerlink" title="本周学习大纲"></a>本周学习大纲</h3><ol>
+<li><strong>制作比赛需要的前端网页项目</strong>：制作js交互部分。</li>
+<li><strong>计算机二级考试准备</strong>：学习java知识，刷题。</li>
+<li><strong>配置spark</strong>:sprk的API。</li>
+</ol>
+<h3 id="本周学习日历"><a href="#本周学习日历" class="headerlink" title="本周学习日历"></a>本周学习日历</h3><table>
+<thead>
+<tr>
+<th>日历</th>
+<th>学习内容</th>
+<th>其他</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>星期一</td>
+<td></td>
+<td>个人生活</td>
+</tr>
+<tr>
+<td>星期二</td>
+<td>配置spark</td>
+<td></td>
+</tr>
+<tr>
+<td>星期三</td>
+<td>制作前端网页</td>
+<td></td>
+</tr>
+<tr>
+<td>星期四</td>
+<td>制作前端网页、计算机二级</td>
+<td></td>
+</tr>
+<tr>
+<td>星期五</td>
+<td>计算计二级</td>
+<td></td>
+</tr>
+<tr>
+<td>星期六</td>
+<td></td>
+<td>个人生活</td>
+</tr>
+<tr>
+<td>星期天</td>
+<td>计算机二级、制作前端网页</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="本周学习内容-及-收获"><a href="#本周学习内容-及-收获" class="headerlink" title="本周学习内容 及 收获"></a>本周学习内容 及 收获</h3><h4 id="前端网页制作"><a href="#前端网页制作" class="headerlink" title="前端网页制作"></a>前端网页制作</h4><h5 id="笔记："><a href="#笔记：" class="headerlink" title="笔记："></a>笔记：</h5><p>无</p>
+<h5 id="完成状态："><a href="#完成状态：" class="headerlink" title="完成状态："></a>完成状态：</h5><p>已完善70%</p>
+<h5 id="学习内容："><a href="#学习内容：" class="headerlink" title="学习内容："></a>学习内容：</h5><ol>
+<li>正在制作js交互部分。还有部分内容没有完成，整体布局已规划好，等待完善。</li>
+</ol>
+<h5 id="学习收获"><a href="#学习收获" class="headerlink" title="学习收获"></a>学习收获</h5><p>对js的使用更加熟练，能加深知识点的理解使用。</p>
+<h4 id="计算机二级"><a href="#计算机二级" class="headerlink" title="计算机二级"></a>计算机二级</h4><h5 id="笔记：-1"><a href="#笔记：-1" class="headerlink" title="笔记："></a>笔记：</h5><p>无</p>
+<h5 id="完成状态：-1"><a href="#完成状态：-1" class="headerlink" title="完成状态："></a>完成状态：</h5><p>学习中……未完成</p>
+<h5 id="学习内容：-1"><a href="#学习内容：-1" class="headerlink" title="学习内容："></a>学习内容：</h5><p>java语言基础、面对对象编程、异常处理、集合框架、I&#x2F;O流、多线程编程、图形用户界面（GUI）编程</p>
+<h5 id="学习收获-1"><a href="#学习收获-1" class="headerlink" title="学习收获"></a>学习收获</h5><p>无</p>
+<h3 id="下周学习大纲"><a href="#下周学习大纲" class="headerlink" title="下周学习大纲"></a>下周学习大纲</h3><ol>
+<li><strong>完善前端项目</strong>：将js部分写好，剩余显示结果部分开始动工，继续完善。</li>
+<li><strong>准备计算机二级考试</strong>：继续刷题。</li>
+<li><strong>完善苍穹外卖</strong></li>
 </ol>
 ]]></content>
   </entry>
