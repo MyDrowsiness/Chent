@@ -818,7 +818,27 @@ C==&gt;E(Bom)
   <entry>
     <title>CodeWave小组周报</title>
     <url>/2023/12/17/%E7%BB%84%E5%91%98%E7%9A%84%E5%91%A8%E6%8A%A5/</url>
-    <content><![CDATA[<h2 id="2024年-第2周（3-4-3-10）"><a href="#2024年-第2周（3-4-3-10）" class="headerlink" title="2024年 第2周（3.4 - 3.10）"></a>2024年 第2周（3.4 - 3.10）</h2><table>
+    <content><![CDATA[<h2 id="2024年-第3周（3-11-3-17）"><a href="#2024年-第3周（3-11-3-17）" class="headerlink" title="2024年 第3周（3.11 - 3.17）"></a>2024年 第3周（3.11 - 3.17）</h2><table>
+<thead>
+<tr>
+<th>陈涛</th>
+<th>[周报链接]</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>项怀锋</td>
+<td><a href="http://james.rovn.ink/">http://james.rovn.ink</a></td>
+</tr>
+<tr>
+<td>黄倩</td>
+<td><a href="https://snail0220.github.io/2024/03/16/huang2024-3-11-2024-3-17%E5%91%A8%E6%8A%A5/">https://snail0220.github.io/2024/03/16/huang2024-3-11-2024-3-17%E5%91%A8%E6%8A%A5/</a></td>
+</tr>
+<tr>
+<td>刘浩</td>
+<td><a href="https://lh-bllog.github.io/">https://lh-bllog.github.io/</a></td>
+</tr>
+</tbody></table>
+<h2 id="2024年-第2周（3-4-3-10）"><a href="#2024年-第2周（3-4-3-10）" class="headerlink" title="2024年 第2周（3.4 - 3.10）"></a>2024年 第2周（3.4 - 3.10）</h2><table>
 <thead>
 <tr>
 <th>陈涛</th>
@@ -838,7 +858,7 @@ C==&gt;E(Bom)
 <td><a href="https://lh-bllog.github.io/">https://lh-bllog.github.io/</a></td>
 </tr>
 </tbody></table>
-<h2 id="2024年-第1周（12-27-3-3）"><a href="#2024年-第1周（12-27-3-3）" class="headerlink" title="2024年 第1周（12.27 - 3.3）"></a>2024年 第1周（12.27 - 3.3）</h2><table>
+<h2 id="2024年-第1周（2-27-3-3）"><a href="#2024年-第1周（2-27-3-3）" class="headerlink" title="2024年 第1周（2.27 - 3.3）"></a>2024年 第1周（2.27 - 3.3）</h2><table>
 <thead>
 <tr>
 <th>陈涛</th>
@@ -1146,6 +1166,74 @@ C==&gt;E(Bom)
 <li><strong>完善前端项目</strong>：将js部分写好，剩余显示结果部分开始动工，继续完善。</li>
 <li><strong>准备计算机二级考试</strong>：继续刷题。</li>
 <li><strong>完善苍穹外卖</strong></li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>24第三周周报</title>
+    <url>/2024/03/18/24%E7%AC%AC%E4%B8%89%E5%91%A8%E5%91%A8%E6%8A%A5/</url>
+    <content><![CDATA[<h2 id="2024年3月11日-2024年3月17日"><a href="#2024年3月11日-2024年3月17日" class="headerlink" title="2024年3月11日-2024年3月17日"></a>2024年3月11日-2024年3月17日</h2><blockquote>
+<p>CodeWave</p>
+</blockquote>
+<h3 id="本周学习大纲"><a href="#本周学习大纲" class="headerlink" title="本周学习大纲"></a>本周学习大纲</h3><ol>
+<li><strong>准备计算机二级</strong>：学习java</li>
+<li><strong>制作比赛前端项目</strong>：js</li>
+<li><strong>大创</strong>：前端UI设计</li>
+</ol>
+<h3 id="本周学习日历"><a href="#本周学习日历" class="headerlink" title="本周学习日历"></a>本周学习日历</h3><table>
+<thead>
+<tr>
+<th>日历</th>
+<th>学习内容</th>
+<th>其他</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>星期一</td>
+<td>计算机二级</td>
+<td></td>
+</tr>
+<tr>
+<td>星期二</td>
+<td></td>
+<td>个人生活</td>
+</tr>
+<tr>
+<td>星期三</td>
+<td>制作比赛前端项目</td>
+<td></td>
+</tr>
+<tr>
+<td>星期四</td>
+<td>计算机二级</td>
+<td></td>
+</tr>
+<tr>
+<td>星期五</td>
+<td></td>
+<td>个人生活</td>
+</tr>
+<tr>
+<td>星期六</td>
+<td>计算机二级、大创</td>
+<td></td>
+</tr>
+<tr>
+<td>星期天</td>
+<td>计算机二级、制作比赛前端项目、大创</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="本周学习内容-及-收获"><a href="#本周学习内容-及-收获" class="headerlink" title="本周学习内容 及 收获"></a>本周学习内容 及 收获</h3><h4 id="银行管理系统"><a href="#银行管理系统" class="headerlink" title="银行管理系统"></a>银行管理系统</h4><h5 id="笔记："><a href="#笔记：" class="headerlink" title="笔记："></a>笔记：</h5><p>无</p>
+<h5 id="完成状态："><a href="#完成状态：" class="headerlink" title="完成状态："></a>完成状态：</h5><p>未完成本周任务。</p>
+<h5 id="学习内容："><a href="#学习内容：" class="headerlink" title="学习内容："></a>学习内容：</h5><ol>
+<li>javaIO流、API</li>
+</ol>
+<h5 id="学习收获"><a href="#学习收获" class="headerlink" title="学习收获"></a>学习收获</h5><p>重新复习了javaAPI、IO流，以前几乎没有用过，重新学习后有更深的理解。</p>
+<h3 id="下周学习大纲"><a href="#下周学习大纲" class="headerlink" title="下周学习大纲"></a>下周学习大纲</h3><ol>
+<li><strong>准备计算机二级</strong>：学习java</li>
+<li><strong>制作比赛前端项目</strong>：js</li>
+<li><strong>大创</strong>：前端UI设计</li>
 </ol>
 ]]></content>
   </entry>
