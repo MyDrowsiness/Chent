@@ -818,7 +818,27 @@ C==&gt;E(Bom)
   <entry>
     <title>CodeWave小组周报</title>
     <url>/2023/12/17/%E7%BB%84%E5%91%98%E7%9A%84%E5%91%A8%E6%8A%A5/</url>
-    <content><![CDATA[<h2 id="2024年-第3周（3-11-3-17）"><a href="#2024年-第3周（3-11-3-17）" class="headerlink" title="2024年 第3周（3.11 - 3.17）"></a>2024年 第3周（3.11 - 3.17）</h2><table>
+    <content><![CDATA[<h2 id="2024年-第4周（3-18-3-24）"><a href="#2024年-第4周（3-18-3-24）" class="headerlink" title="2024年 第4周（3.18 - 3.24）"></a>2024年 第4周（3.18 - 3.24）</h2><table>
+<thead>
+<tr>
+<th>陈涛</th>
+<th>[周报链接]</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>项怀锋</td>
+<td><a href="http://james.rovn.ink/?p=70">http://james.rovn.ink/?p=70</a></td>
+</tr>
+<tr>
+<td>黄倩</td>
+<td><a href="https://snail0220.github.io/2024/03/21/huang2024-3-18-2024-3-24%E5%91%A8%E6%8A%A5/">https://snail0220.github.io/2024/03/21/huang2024-3-18-2024-3-24%E5%91%A8%E6%8A%A5/</a></td>
+</tr>
+<tr>
+<td>刘浩</td>
+<td><a href="https://lh-bllog.github.io/">https://lh-bllog.github.io/</a></td>
+</tr>
+</tbody></table>
+<h2 id="2024年-第3周（3-11-3-17）"><a href="#2024年-第3周（3-11-3-17）" class="headerlink" title="2024年 第3周（3.11 - 3.17）"></a>2024年 第3周（3.11 - 3.17）</h2><table>
 <thead>
 <tr>
 <th>陈涛</th>
@@ -1234,6 +1254,76 @@ C==&gt;E(Bom)
 <li><strong>准备计算机二级</strong>：学习java</li>
 <li><strong>制作比赛前端项目</strong>：js</li>
 <li><strong>大创</strong>：前端UI设计</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>24第四周周报</title>
+    <url>/2024/03/24/24%E7%AC%AC%E5%9B%9B%E5%91%A8%E5%91%A8%E6%8A%A5/</url>
+    <content><![CDATA[<h2 id="2024年2月26日-2024年3月3日"><a href="#2024年2月26日-2024年3月3日" class="headerlink" title="2024年2月26日-2024年3月3日"></a>2024年2月26日-2024年3月3日</h2><blockquote>
+<p>CodeWave</p>
+</blockquote>
+<h3 id="一个可以删除的提醒："><a href="#一个可以删除的提醒：" class="headerlink" title="一个可以删除的提醒："></a>一个可以删除的提醒：</h3><h3 id="本周学习大纲"><a href="#本周学习大纲" class="headerlink" title="本周学习大纲"></a>本周学习大纲</h3><ol>
+<li><strong>比赛需要的web前端页面</strong>：已完成</li>
+<li><strong>大创需要的web前端页面</strong>：UI设计完成，正在制作html框架</li>
+<li><strong>C++&amp;Python</strong>：学习C++，练习使用Python</li>
+</ol>
+<h3 id="本周学习日历"><a href="#本周学习日历" class="headerlink" title="本周学习日历"></a>本周学习日历</h3><table>
+<thead>
+<tr>
+<th>日历</th>
+<th>学习内容</th>
+<th>其他</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>星期一</td>
+<td>比赛需要的web前端页面</td>
+<td></td>
+</tr>
+<tr>
+<td>星期二</td>
+<td>比赛需要的web前端页面</td>
+<td></td>
+</tr>
+<tr>
+<td>星期三</td>
+<td></td>
+<td>个人生活</td>
+</tr>
+<tr>
+<td>星期四</td>
+<td>大创项目UI设计</td>
+<td></td>
+</tr>
+<tr>
+<td>星期五</td>
+<td>大创项目html代码</td>
+<td></td>
+</tr>
+<tr>
+<td>星期六</td>
+<td>学习C++</td>
+<td>个人生活</td>
+</tr>
+<tr>
+<td>星期天</td>
+<td>大创项目html代码、练习python</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="本周学习内容-及-收获"><a href="#本周学习内容-及-收获" class="headerlink" title="本周学习内容 及 收获"></a>本周学习内容 及 收获</h3><h4 id="银行管理系统"><a href="#银行管理系统" class="headerlink" title="银行管理系统"></a>银行管理系统</h4><h5 id="笔记："><a href="#笔记：" class="headerlink" title="笔记："></a>笔记：</h5><p>无</p>
+<h5 id="完成状态："><a href="#完成状态：" class="headerlink" title="完成状态："></a>完成状态：</h5><p>已完成本周任务。</p>
+<h5 id="学习内容："><a href="#学习内容：" class="headerlink" title="学习内容："></a>学习内容：</h5><ol>
+<li>完成了比赛前端页面</li>
+<li>设计了大创项目页面UI</li>
+<li>学习了C++的指针，利用算法题练习使用Python</li>
+</ol>
+<h5 id="学习收获"><a href="#学习收获" class="headerlink" title="学习收获"></a>学习收获</h5><p>web前端有很多很难的内容，想要实现想要的js效果经常要找很多资料，利用AI。虽然很多代码做完依然不能自己复刻，但是知道了如何做，对以后遇到相似难题有很好的帮助。</p>
+<h3 id="下周学习大纲"><a href="#下周学习大纲" class="headerlink" title="下周学习大纲"></a>下周学习大纲</h3><ol>
+<li><strong>学习C++和Python</strong>：继续</li>
+<li><strong>前端Web</strong>：项目前端页面制作</li>
+<li><strong>其他：</strong>比赛</li>
 </ol>
 ]]></content>
   </entry>
