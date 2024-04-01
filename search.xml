@@ -600,7 +600,7 @@
   <entry>
     <title>JavaScript笔记Day01</title>
     <url>/2024/01/22/JavaScriptDay01/</url>
-    <content><![CDATA[<h3 id="一、软件"><a href="#一、软件" class="headerlink" title="一、软件"></a>一、软件</h3><h4 id="1-截图软件"><a href="#1-截图软件" class="headerlink" title="1. 截图软件"></a>1. 截图软件</h4><p>Snipaste</p>
+    <content><![CDATA[<h3 id="一、实用软件推荐"><a href="#一、实用软件推荐" class="headerlink" title="一、实用软件推荐"></a>一、实用软件推荐</h3><h4 id="1-截图软件"><a href="#1-截图软件" class="headerlink" title="1. 截图软件"></a>1. 截图软件</h4><p>Snipaste</p>
 <table>
 <thead>
 <tr>
@@ -818,7 +818,27 @@ C==&gt;E(Bom)
   <entry>
     <title>CodeWave小组周报</title>
     <url>/2023/12/17/%E7%BB%84%E5%91%98%E7%9A%84%E5%91%A8%E6%8A%A5/</url>
-    <content><![CDATA[<h2 id="2024年-第4周（3-18-3-24）"><a href="#2024年-第4周（3-18-3-24）" class="headerlink" title="2024年 第4周（3.18 - 3.24）"></a>2024年 第4周（3.18 - 3.24）</h2><table>
+    <content><![CDATA[<h2 id="2024年-第5周（3-25-3-31）"><a href="#2024年-第5周（3-25-3-31）" class="headerlink" title="2024年 第5周（3.25 - 3.31）"></a>2024年 第5周（3.25 - 3.31）</h2><table>
+<thead>
+<tr>
+<th>陈涛</th>
+<th>[周报链接]</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>项怀锋</td>
+<td><a href="http://james.rovn.ink/?p=70">http://james.rovn.ink/?p=70</a></td>
+</tr>
+<tr>
+<td>黄倩</td>
+<td><a href="https://snail0220.github.io/2024/03/31/huang2024-3-25-2024-3-31%E5%91%A8%E6%8A%A5/">https://snail0220.github.io/2024/03/31/huang2024-3-25-2024-3-31%E5%91%A8%E6%8A%A5/</a></td>
+</tr>
+<tr>
+<td>刘浩</td>
+<td><a href="https://lh-bllog.github.io/">https://lh-bllog.github.io/</a></td>
+</tr>
+</tbody></table>
+<h2 id="2024年-第4周（3-18-3-24）"><a href="#2024年-第4周（3-18-3-24）" class="headerlink" title="2024年 第4周（3.18 - 3.24）"></a>2024年 第4周（3.18 - 3.24）</h2><table>
 <thead>
 <tr>
 <th>陈涛</th>
@@ -1320,6 +1340,75 @@ C==&gt;E(Bom)
 <li>学习了C++的指针，利用算法题练习使用Python</li>
 </ol>
 <h5 id="学习收获"><a href="#学习收获" class="headerlink" title="学习收获"></a>学习收获</h5><p>web前端有很多很难的内容，想要实现想要的js效果经常要找很多资料，利用AI。虽然很多代码做完依然不能自己复刻，但是知道了如何做，对以后遇到相似难题有很好的帮助。</p>
+<h3 id="下周学习大纲"><a href="#下周学习大纲" class="headerlink" title="下周学习大纲"></a>下周学习大纲</h3><ol>
+<li><strong>学习C++和Python</strong>：继续</li>
+<li><strong>前端Web</strong>：项目前端页面制作</li>
+<li><strong>其他：</strong>比赛</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>24第五周周报</title>
+    <url>/2024/04/01/24%E7%AC%AC%E4%BA%94%E5%91%A8%E5%91%A8%E6%8A%A5/</url>
+    <content><![CDATA[<h2 id="2024年3月25日-2024年3月31日"><a href="#2024年3月25日-2024年3月31日" class="headerlink" title="2024年3月25日-2024年3月31日"></a>2024年3月25日-2024年3月31日</h2><blockquote>
+<p>CodeWave</p>
+</blockquote>
+<h3 id="本周学习大纲"><a href="#本周学习大纲" class="headerlink" title="本周学习大纲"></a>本周学习大纲</h3><ol>
+<li><strong>学习Echars</strong>：已完成</li>
+<li><strong>大创需要的web前端页面</strong>：html框架已完成</li>
+<li><strong>C++&amp;Python</strong>：学习C++，练习使用Python</li>
+</ol>
+<h3 id="本周学习日历"><a href="#本周学习日历" class="headerlink" title="本周学习日历"></a>本周学习日历</h3><table>
+<thead>
+<tr>
+<th>日历</th>
+<th>学习内容</th>
+<th>其他</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>星期一</td>
+<td>大创需要的web前端页面</td>
+<td></td>
+</tr>
+<tr>
+<td>星期二</td>
+<td>大创需要的web前端页面</td>
+<td></td>
+</tr>
+<tr>
+<td>星期三</td>
+<td>Echars</td>
+<td>个人生活</td>
+</tr>
+<tr>
+<td>星期四</td>
+<td>Echars、C++</td>
+<td></td>
+</tr>
+<tr>
+<td>星期五</td>
+<td>Echars</td>
+<td></td>
+</tr>
+<tr>
+<td>星期六</td>
+<td>学习C++、python</td>
+<td>个人生活</td>
+</tr>
+<tr>
+<td>星期天</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="本周学习内容-及-收获"><a href="#本周学习内容-及-收获" class="headerlink" title="本周学习内容 及 收获"></a>本周学习内容 及 收获</h3><h4 id="Echars"><a href="#Echars" class="headerlink" title="Echars"></a>Echars</h4><h5 id="笔记："><a href="#笔记：" class="headerlink" title="笔记："></a>笔记：</h5><p>无</p>
+<h5 id="完成状态："><a href="#完成状态：" class="headerlink" title="完成状态："></a>完成状态：</h5><p>已完成本周任务。</p>
+<h5 id="学习内容："><a href="#学习内容：" class="headerlink" title="学习内容："></a>学习内容：</h5><pre><code> 1. Echars配置
+ 2. Echars柱形图、折线图、饼状图的引入及使用
+ 3. Echars图形的定制
+</code></pre>
+<h5 id="学习收获"><a href="#学习收获" class="headerlink" title="学习收获"></a>学习收获</h5><p>Echars使用很简单，有成熟完善的素材官网，看完视频后就能够自己使用了。较难的是自己定制图形，需要对各个参数都有较深的理解或者需要是不是参照教程修改。后面没有讲如何与后端进行数据交互并展示，需要查资料自学。</p>
 <h3 id="下周学习大纲"><a href="#下周学习大纲" class="headerlink" title="下周学习大纲"></a>下周学习大纲</h3><ol>
 <li><strong>学习C++和Python</strong>：继续</li>
 <li><strong>前端Web</strong>：项目前端页面制作</li>
