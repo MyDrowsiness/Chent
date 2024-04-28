@@ -1597,4 +1597,128 @@ C==&gt;E(Bom)
 </ol>
 ]]></content>
   </entry>
+  <entry>
+    <title>24第九周周报</title>
+    <url>/2024/04/28/24%E7%AC%AC%E4%B9%9D%E5%91%A8%E5%91%A8%E6%8A%A5/</url>
+    <content><![CDATA[<h2 id="2024年4月22日-2024年4月28日"><a href="#2024年4月22日-2024年4月28日" class="headerlink" title="2024年4月22日-2024年4月28日"></a>2024年4月22日-2024年4月28日</h2><blockquote>
+<p>CodeWave</p>
+</blockquote>
+<h3 id="本周学习大纲"><a href="#本周学习大纲" class="headerlink" title="本周学习大纲"></a>本周学习大纲</h3><ol>
+<li><strong>比赛</strong>：大创前端</li>
+<li><strong>Redis</strong>：入门</li>
+</ol>
+<h3 id="本周学习日历"><a href="#本周学习日历" class="headerlink" title="本周学习日历"></a>本周学习日历</h3><table>
+<thead>
+<tr>
+<th>日历</th>
+<th>学习内容</th>
+<th>其他</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>星期一</td>
+<td>Redis</td>
+<td></td>
+</tr>
+<tr>
+<td>星期二</td>
+<td>Redis、大创前端</td>
+<td></td>
+</tr>
+<tr>
+<td>星期三</td>
+<td>大创前端</td>
+<td>个人生活</td>
+</tr>
+<tr>
+<td>星期四</td>
+<td></td>
+<td>个人生活</td>
+</tr>
+<tr>
+<td>星期五</td>
+<td>大创前端</td>
+<td>个人生活</td>
+</tr>
+<tr>
+<td>星期六</td>
+<td></td>
+<td>个人生活</td>
+</tr>
+<tr>
+<td>星期天</td>
+<td>大创前端、Redis</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="本周学习内容-及-收获"><a href="#本周学习内容-及-收获" class="headerlink" title="本周学习内容 及 收获"></a>本周学习内容 及 收获</h3><h4 id="大创"><a href="#大创" class="headerlink" title="大创"></a>大创</h4><h5 id="笔记："><a href="#笔记：" class="headerlink" title="笔记："></a>笔记：</h5><p>无</p>
+<h5 id="完成状态："><a href="#完成状态：" class="headerlink" title="完成状态："></a>完成状态：</h5><p>未完成本周任务。</p>
+<h5 id="学习内容："><a href="#学习内容：" class="headerlink" title="学习内容："></a>学习内容：</h5><pre><code>   1. 前端登录接口、测试。
+</code></pre>
+<h5 id="学习收获"><a href="#学习收获" class="headerlink" title="学习收获"></a>学习收获</h5><p>原生的前端页面太麻烦了，打算深入学一下VUE。</p>
+<h4 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h4><h5 id="笔记：-1"><a href="#笔记：-1" class="headerlink" title="笔记："></a>笔记：</h5><p>无</p>
+<h5 id="完成状态：-1"><a href="#完成状态：-1" class="headerlink" title="完成状态："></a>完成状态：</h5><p>未完成本周任务。</p>
+<h5 id="学习内容：-1"><a href="#学习内容：-1" class="headerlink" title="学习内容："></a>学习内容：</h5><ol>
+<li>大创前端，编写登录页面，写接口前后端联调测试</li>
+</ol>
+<h5 id="学习收获-1"><a href="#学习收获-1" class="headerlink" title="学习收获"></a>学习收获</h5><p>复习（重学）了一下ajax，登录校验，接口测试。加深熟悉了熟悉了代码流程，显著的进步，这些知识将对我未来进行Web开发和质量保证工作产生积极而深远的影响。</p>
+<h3 id="下周学习大纲"><a href="#下周学习大纲" class="headerlink" title="下周学习大纲"></a>下周学习大纲</h3><ol>
+<li><strong>学习C++和Python</strong>：继续</li>
+<li><strong>算法</strong>：坚持每天一到三题</li>
+<li><strong>javaweb</strong>:继续练习。</li>
+<li><strong>其他：</strong>前端登陆页面</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>Redis-01</title>
+    <url>/2024/04/28/Redis-01/</url>
+    <content><![CDATA[<p>官网：<a href="https://redis.io/">https://redis.io</a></p>
+<p>中文网：<a href="https://www.redis.net.cn/">https://www.redis.net.cn/</a></p>
+<h3 id="一、Redis简介"><a href="#一、Redis简介" class="headerlink" title="一、Redis简介"></a>一、Redis简介</h3><p>Redis是一个基于内存的 key-value（键值对） 结构数据库。</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>chen</td>
+</tr>
+</tbody></table>
+<p>Q: 为什么可以使用MySQL数据库，还要用Redis?</p>
+<ul>
+<li>基于内存存储，读写性能高</li>
+<li>适合存储热点数据（热点商品、咨询、新闻等访问量大的数据）</li>
+</ul>
+<p>——其对于MySQL并非取代，而是补充</p>
+<h3 id="二、下载安装与使用"><a href="#二、下载安装与使用" class="headerlink" title="二、下载安装与使用"></a>二、下载安装与使用</h3><p>一、Windows：<a href="https://github.com/microsoftarchive/redis/releases">https://github.com/microsoftarchive/redis/releases</a>（解压即可使用）<br>    ▶目录结构下重点文件：<br>        redis.windows.conf – Redis配置文件<br>        redis-cli.exe – Redis客户端<br>        redis-server.exe – Redis服务端</p>
+<p>​	▶开启Redis服务：</p>
+<p>​		1.定位到解压缩后的redis文件夹内（示例地址：D:\user\Redis-x64-3.0.504）<br>​		2.在当前文件页面打开cmd命令窗口<br>​		3.输入：redis-server.exe redis.windows.conf（最好使用tab自动填充，以防输入错误或路径错误）<br>​			成功示例：（默认端口号6379，关闭服务ctrl+C）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">PS D:\user\Redis-x64-3.0.504&gt; .\redis-server.exe .\redis.windows.conf</span><br><span class="line">                _._</span><br><span class="line">           _.-``__ &#x27;&#x27;-._</span><br><span class="line">      _.-``    `.  `_.  &#x27;&#x27;-._           Redis 3.0.504 (00000000/0) 64 bit</span><br><span class="line">  .-`` .-```.  ```\/    _.,_ &#x27;&#x27;-._</span><br><span class="line"> (    &#x27;      ,       .-`  | `,    )     Running in standalone mode</span><br><span class="line"> |`-._`-...-` __...-.``-._|&#x27;` _.-&#x27;|     Port: 6379</span><br><span class="line"> |    `-._   `._    /     _.-&#x27;    |     PID: 18352</span><br><span class="line">  `-._    `-._  `-./  _.-&#x27;    _.-&#x27;</span><br><span class="line"> |`-._`-._    `-.__.-&#x27;    _.-&#x27;_.-&#x27;|</span><br><span class="line"> |    `-._`-._        _.-&#x27;_.-&#x27;    |           http://redis.io</span><br><span class="line">  `-._    `-._`-.__.-&#x27;_.-&#x27;    _.-&#x27;</span><br><span class="line"> |`-._`-._    `-.__.-&#x27;    _.-&#x27;_.-&#x27;|</span><br><span class="line"> |    `-._`-._        _.-&#x27;_.-&#x27;    |</span><br><span class="line">  `-._    `-._`-.__.-&#x27;_.-&#x27;    _.-&#x27;</span><br><span class="line">      `-._    `-.__.-&#x27;    _.-&#x27;</span><br><span class="line">          `-._        _.-&#x27;</span><br><span class="line">              `-.__.-&#x27;</span><br><span class="line"></span><br><span class="line">[18352] 22 Apr 19:46:56.099 # Server started, Redis version 3.0.504</span><br><span class="line">[18352] 22 Apr 19:46:56.099 * DB loaded from disk: 0.000 seconds</span><br><span class="line">[18352] 22 Apr 19:46:56.099 * The server is now ready to accept connections on port 6379</span><br></pre></td></tr></table></figure>
+
+<p>​	▶客户端连接本地Redis服务：<br>​		1.在Redis服务开启的前提下，同上一步骤1、2，打开新的cmd<br>​		2.输入：redis-cli.exe 或 redis-cli.exe -h localhost -p 6379</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">PS D:\user\Redis-x64-3.0.504&gt; .\redis-cli.exe</span><br><span class="line">127.0.0.1:6379&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​		3.输入：keys *</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(empty list or set)</span><br><span class="line">127.0.0.1:6379&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​		4.退出连接：输入exit<br>​	▶配置Redis密码（默认无密码直连，不安全）<br>​		1.打开redis.windows.conf文件夹<br>​		2.ctrl+f搜索：requirepass foobared –&gt; 找到#requirepass foobared，去除注释“#”</p>
+<p>​		3.将“foobared”改为新密码，例密码为“123456” –&gt;ctrl+s保存退出</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">requirepass 123456</span><br></pre></td></tr></table></figure>
+
+<p>​		PS: Redis中无“用户”概念，仅需要密码进入。<br>​		4.配置密码后连接示范：</p>
+<p>​			① 直接连接 –&gt; 错误提示：未提供服务所需的认证信息</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">PS D:\user\Redis-x64-3.0.504&gt; .\redis-cli.exe -h localhost -p 6379</span><br><span class="line">localhost:6379&gt; keys *</span><br><span class="line">(error) NOAUTH Authentication required.</span><br></pre></td></tr></table></figure>
+
+<p>​			② 命令行参数中直接传入密码：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">PS D:\user\Redis-x64-3.0.504&gt; .\redis-cli.exe -h localhost -p 6379 -a @chentao</span><br><span class="line">Unrecognized option or bad number of args for: &#x27;-a&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>​			PS:由于redis版本不同，</p>
+<p>​		Q: 为什么我配置密码后依然能直接连接Redis而不需要输入密码?<br>​		A:配置后未重启Redis服务，关闭重启后便能正常连接。</p>
+<p>二、Linux：<a href="https://download.redis.io/releases">https://download.redis.io/releases</a></p>
+]]></content>
+  </entry>
 </search>

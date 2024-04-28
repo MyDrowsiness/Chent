@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="zh"><head>
+<title>Redis-01 - MyDrowsiness个人博客</title>
+<meta charset="UTF-8">
+<meta name="keywords" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+<link rel="shortcut icon" href="/images/Sprite-pumpkin.png" type="image/png" />
+<meta name="description" content="官网：https:&#x2F;&#x2F;redis.io 中文网：https:&#x2F;&#x2F;www.redis.net.cn&#x2F; 一、Redis简介Redis是一个基于内存的 key-value（键值对） 结构数据库。    key value    name chen   Q: 为什么可以使用MySQL数据库，还要用Redis?  基于内存存储，读写性能高 适合存储热点数据（热点商品、咨询、新闻等访问量大的数据）  ——其对">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis-01">
+<meta property="og:url" content="http://example.com/2024/04/28/Redis-01/index.html">
+<meta property="og:site_name" content="MyDrowsiness个人博客">
+<meta property="og:description" content="官网：https:&#x2F;&#x2F;redis.io 中文网：https:&#x2F;&#x2F;www.redis.net.cn&#x2F; 一、Redis简介Redis是一个基于内存的 key-value（键值对） 结构数据库。    key value    name chen   Q: 为什么可以使用MySQL数据库，还要用Redis?  基于内存存储，读写性能高 适合存储热点数据（热点商品、咨询、新闻等访问量大的数据）  ——其对">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-28T11:07:55.161Z">
+<meta property="article:modified_time" content="2024-04-28T11:09:06.384Z">
+<meta property="article:author" content="MyDrowsiness">
+<meta name="twitter:card" content="summary">
+
+<link rel="stylesheet" href="/lib/fancybox/fancybox.css">
+<link rel="stylesheet" href="/lib/mdui_043tiny/mdui.css">
+
+
+<link rel="stylesheet" href="/lib/iconfont/iconfont.css?v=1714302572609">
+
+<link rel="stylesheet" href="/css/style.css?v=1714302572609">
+
+
+
+
+    
+        <link rel="stylesheet" href="/custom.css?v=1714302572609">
+    
+
+
+
+<script src="/lib/mdui_043tiny/mdui.js" async></script>
+<script src="/lib/fancybox/fancybox.umd.js" async></script>
+<script src="/lib/lax.min.js" async></script>
+
+
+<script async src="/js/app.js?v=1714302572609"></script>
+
+ 
+
+
+
+<link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/atom-one-dark.min.css">
+<meta name="generator" content="Hexo 7.0.0"></head><body class="nexmoe mdui-drawer-body-left"><div id="nexmoe-background"><div class="nexmoe-bg" style="background-image: url(https://github.com/MyDrowsiness/MyDrowsiness.github.io/raw/dd3d7d7fc85c7b9a78398ebe4f1f7793d4d3658d/DSC_2376.png)"></div><div class="mdui-appbar mdui-shadow-0"><div class="mdui-toolbar"><a class="mdui-btn mdui-btn-icon mdui-ripple" mdui-drawer="{target: &#039;#drawer&#039;, swipe: true}" title="menu"><i class="mdui-icon nexmoefont icon-menu"></i></a><div class="mdui-toolbar-spacer"></div><a class="mdui-btn mdui-btn-icon" href="/" title="MyDrowsiness"><img src="https://github.com/MyDrowsiness/MyDrowsiness.github.io/raw/dd3d7d7fc85c7b9a78398ebe4f1f7793d4d3658d/58bb7a1ad9ff54de4c7927e485c77f2.jpg" alt="MyDrowsiness"></a></div></div></div><div id="nexmoe-header"><div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="MyDrowsiness">
+            <img src="https://github.com/MyDrowsiness/MyDrowsiness.github.io/raw/dd3d7d7fc85c7b9a78398ebe4f1f7793d4d3658d/58bb7a1ad9ff54de4c7927e485c77f2.jpg" alt="MyDrowsiness" alt="MyDrowsiness">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>22</div>
+        <div><span>标签</span>0</div>
+        <div><span>分类</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" href="/archive.html" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" target="_blank" rel="noopener" href="https://starlike-daydream.github.io/Cesteo.github.io/" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple false" target="_blank" rel="noopener" href="https://mydrowsiness.github.io/2023/12/17/%E7%BB%84%E5%91%98%E7%9A%84%E5%91%A8%E6%8A%A5/" title="关于周报">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于周报
+            </div>
+        </a>
+        
+    </div>
+    
+    
+        
+        <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+         
+            <form id="search_form" action_e="https://cn.bing.com/search?q=site:nexmoe.com" onsubmit="return search();">
+                <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+            </form>
+         
+    </div>
+</div>
+
+
+
+
+    
+        
+        <div class="nexmoe-widget-wrap">
+	<div class="nexmoe-widget nexmoe-social">
+		<a
+			class="mdui-ripple"
+			href="https://bilibili.com/"
+			target="_blank"
+			mdui-tooltip="{content: '哔哩哔哩'}"
+			style="
+				color: rgb(231, 106, 141);
+				background-color: rgba(231, 106, 141, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-bilibili"
+			></i> </a
+		><a
+			class="mdui-ripple"
+			href="https://github.com/MyDrowsiness/"
+			target="_blank"
+			mdui-tooltip="{content: 'GitHub'}"
+			style="
+				color: rgb(25, 23, 23);
+				background-color: rgba(25, 23, 23, .1);
+			"
+		>
+			<i
+				class="nexmoefont icon-github"
+			></i> </a
+		>
+	</div>
+</div>
+
+    
+        
+        
+
+    
+        
+        
+    
+        
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/">2024</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/">2023</a><span class="archive-list-count">10</span></li></ul>
+    </div>
+  </div>
+
+
+
+    
+        
+        
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">最新文章</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/04/28/Redis-01/">Redis-01</a>
+          </li>
+        
+          <li>
+            <a href="/2024/04/28/24%E7%AC%AC%E4%B9%9D%E5%91%A8%E5%91%A8%E6%8A%A5/">24第九周周报</a>
+          </li>
+        
+          <li>
+            <a href="/2024/04/24/24%E7%AC%AC%E5%85%AB%E5%91%A8%E5%91%A8%E6%8A%A5/">24第八周周报</a>
+          </li>
+        
+          <li>
+            <a href="/2024/04/08/24%E7%AC%AC%E5%85%AD%E5%91%A8%E5%91%A8%E6%8A%A5/">24第六周周报</a>
+          </li>
+        
+          <li>
+            <a href="/2024/04/01/24%E7%AC%AC%E4%BA%94%E5%91%A8%E5%91%A8%E6%8A%A5/">24第五周周报</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+   
+    <div class="nexmoe-copyright">
+        &copy; 2024 MyDrowsiness
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        
+    </div>
+</div><!-- .nexmoe-drawer --></div><div id="nexmoe-content"><div class="nexmoe-primary"><div class="nexmoe-post">
+  <article>
+    
+        <div class="nexmoe-post-cover absolute" style="padding-top: 41.66666666666667%;"> 
+            <img src="/images/DSC_2376.png" alt="Redis-01" loading="lazy">
+            <h1>Redis-01</h1>
+        </div>
+    
+    
+    <div class="nexmoe-post-meta">
+    <div class="nexmoe-rainbow">
+        <a class="nexmoefont icon-calendar-fill">2024年04月28日</a>
+        
+        
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+    <p>官网：<a target="_blank" rel="noopener" href="https://redis.io/">https://redis.io</a></p>
+<p>中文网：<a target="_blank" rel="noopener" href="https://www.redis.net.cn/">https://www.redis.net.cn/</a></p>
+<h3 id="一、Redis简介"><a href="#一、Redis简介" class="headerlink" title="一、Redis简介"></a>一、Redis简介</h3><p>Redis是一个基于内存的 key-value（键值对） 结构数据库。</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>chen</td>
+</tr>
+</tbody></table>
+<p>Q: 为什么可以使用MySQL数据库，还要用Redis?</p>
+<ul>
+<li>基于内存存储，读写性能高</li>
+<li>适合存储热点数据（热点商品、咨询、新闻等访问量大的数据）</li>
+</ul>
+<p>——其对于MySQL并非取代，而是补充</p>
+<h3 id="二、下载安装与使用"><a href="#二、下载安装与使用" class="headerlink" title="二、下载安装与使用"></a>二、下载安装与使用</h3><p>一、Windows：<a target="_blank" rel="noopener" href="https://github.com/microsoftarchive/redis/releases">https://github.com/microsoftarchive/redis/releases</a>（解压即可使用）<br>    ▶目录结构下重点文件：<br>        redis.windows.conf – Redis配置文件<br>        redis-cli.exe – Redis客户端<br>        redis-server.exe – Redis服务端</p>
+<p>​	▶开启Redis服务：</p>
+<p>​		1.定位到解压缩后的redis文件夹内（示例地址：D:\user\Redis-x64-3.0.504）<br>​		2.在当前文件页面打开cmd命令窗口<br>​		3.输入：redis-server.exe redis.windows.conf（最好使用tab自动填充，以防输入错误或路径错误）<br>​			成功示例：（默认端口号6379，关闭服务ctrl+C）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">PS D:\user\Redis-x64-3.0.504&gt; .\redis-server.exe .\redis.windows.conf</span><br><span class="line">                _._</span><br><span class="line">           _.-``__ &#x27;&#x27;-._</span><br><span class="line">      _.-``    `.  `_.  &#x27;&#x27;-._           Redis 3.0.504 (00000000/0) 64 bit</span><br><span class="line">  .-`` .-```.  ```\/    _.,_ &#x27;&#x27;-._</span><br><span class="line"> (    &#x27;      ,       .-`  | `,    )     Running in standalone mode</span><br><span class="line"> |`-._`-...-` __...-.``-._|&#x27;` _.-&#x27;|     Port: 6379</span><br><span class="line"> |    `-._   `._    /     _.-&#x27;    |     PID: 18352</span><br><span class="line">  `-._    `-._  `-./  _.-&#x27;    _.-&#x27;</span><br><span class="line"> |`-._`-._    `-.__.-&#x27;    _.-&#x27;_.-&#x27;|</span><br><span class="line"> |    `-._`-._        _.-&#x27;_.-&#x27;    |           http://redis.io</span><br><span class="line">  `-._    `-._`-.__.-&#x27;_.-&#x27;    _.-&#x27;</span><br><span class="line"> |`-._`-._    `-.__.-&#x27;    _.-&#x27;_.-&#x27;|</span><br><span class="line"> |    `-._`-._        _.-&#x27;_.-&#x27;    |</span><br><span class="line">  `-._    `-._`-.__.-&#x27;_.-&#x27;    _.-&#x27;</span><br><span class="line">      `-._    `-.__.-&#x27;    _.-&#x27;</span><br><span class="line">          `-._        _.-&#x27;</span><br><span class="line">              `-.__.-&#x27;</span><br><span class="line"></span><br><span class="line">[18352] 22 Apr 19:46:56.099 # Server started, Redis version 3.0.504</span><br><span class="line">[18352] 22 Apr 19:46:56.099 * DB loaded from disk: 0.000 seconds</span><br><span class="line">[18352] 22 Apr 19:46:56.099 * The server is now ready to accept connections on port 6379</span><br></pre></td></tr></table></figure>
+
+<p>​	▶客户端连接本地Redis服务：<br>​		1.在Redis服务开启的前提下，同上一步骤1、2，打开新的cmd<br>​		2.输入：redis-cli.exe 或 redis-cli.exe -h localhost -p 6379</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PS D:\user\Redis-x64-3.0.504&gt; .\redis-cli.exe</span><br><span class="line">127.0.0.1:6379&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​		3.输入：keys *</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(empty list or set)</span><br><span class="line">127.0.0.1:6379&gt;</span><br></pre></td></tr></table></figure>
+
+<p>​		4.退出连接：输入exit<br>​	▶配置Redis密码（默认无密码直连，不安全）<br>​		1.打开redis.windows.conf文件夹<br>​		2.ctrl+f搜索：requirepass foobared –&gt; 找到#requirepass foobared，去除注释“#”</p>
+<p>​		3.将“foobared”改为新密码，例密码为“123456” –&gt;ctrl+s保存退出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">requirepass 123456</span><br></pre></td></tr></table></figure>
+
+<p>​		PS: Redis中无“用户”概念，仅需要密码进入。<br>​		4.配置密码后连接示范：</p>
+<p>​			① 直接连接 –&gt; 错误提示：未提供服务所需的认证信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PS D:\user\Redis-x64-3.0.504&gt; .\redis-cli.exe -h localhost -p 6379</span><br><span class="line">localhost:6379&gt; keys *</span><br><span class="line">(error) NOAUTH Authentication required.</span><br></pre></td></tr></table></figure>
+
+<p>​			② 命令行参数中直接传入密码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PS D:\user\Redis-x64-3.0.504&gt; .\redis-cli.exe -h localhost -p 6379 -a @chentao</span><br><span class="line">Unrecognized option or bad number of args for: &#x27;-a&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>​			PS:由于redis版本不同，</p>
+<p>​		Q: 为什么我配置密码后依然能直接连接Redis而不需要输入密码?<br>​		A:配置后未重启Redis服务，关闭重启后便能正常连接。</p>
+<p>二、Linux：<a target="_blank" rel="noopener" href="https://download.redis.io/releases">https://download.redis.io/releases</a></p>
+
+    
+  </article>
+
+  
+      
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+   
+    
+</div>
+  
+  
+    <script async src="/js/copy-codeblock.js?v=1714302572595"></script>
+  
+
+  
+      <div class="nexmoe-post-footer">
+          
+      </div>
+  
+</div></div><div class="nexmoe-post-right">    <div class="nexmoe-fixed">
+        <div class="nexmoe-tool">
+
+            
+
+            
+            
+            <button class="mdui-fab catalog" style="overflow:unset;">
+                <i class="nexmoefont icon-i-catalog"></i>
+                <div class="nexmoe-toc">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81Redis%E7%AE%80%E4%BB%8B"><span class="toc-number">1.</span> <span class="toc-text">一、Redis简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">二、下载安装与使用</span></a></li></ol>
+                </div>
+            </button>
+            
+
+            
+
+            <a href="#nexmoe-content" class="backtop toc-link" aria-label="Back To Top" title="top"><button class="mdui-fab mdui-ripple"><i class="nexmoefont icon-caret-top"></i></button></a>
+        </div>
+    </div>
+</div></div><div id="nexmoe-footer"><!--!--></div><div id="nexmoe-search-space"><div class="search-container"><div class="search-header"><div class="search-input-container"><input class="search-input" type="text" placeholder="搜索" onInput="sinput();"></div><a class="search-close" onclick="sclose();">×</a></div><div class="search-body"></div></div></div><div></div></body></html>
